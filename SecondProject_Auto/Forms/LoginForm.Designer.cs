@@ -1,6 +1,6 @@
-﻿namespace SecondProject_Auto
+﻿namespace SecondProject_Auto.Forms
 {
-    partial class ProfileForm
+    partial class LoginForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,77 +29,114 @@
         private void InitializeComponent()
         {
             this.loginName_txtb = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.loginEmail_txtb = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.loginPassword_txtb = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.loginPassword_txtb = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // loginName_txtb
             // 
-            this.loginName_txtb.Location = new System.Drawing.Point(56, 113);
+            this.loginName_txtb.Location = new System.Drawing.Point(80, 143);
             this.loginName_txtb.Name = "loginName_txtb";
             this.loginName_txtb.Size = new System.Drawing.Size(201, 20);
-            this.loginName_txtb.TabIndex = 1;
+            this.loginName_txtb.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.label1.Location = new System.Drawing.Point(77, 80);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(141, 26);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Регистрация";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.label2.Location = new System.Drawing.Point(53, 93);
+            this.label2.Location = new System.Drawing.Point(79, 123);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 17);
-            this.label2.TabIndex = 3;
+            this.label2.TabIndex = 2;
             this.label2.Text = "Имя";
             // 
             // loginEmail_txtb
             // 
-            this.loginEmail_txtb.Location = new System.Drawing.Point(56, 156);
+            this.loginEmail_txtb.Location = new System.Drawing.Point(80, 186);
             this.loginEmail_txtb.Name = "loginEmail_txtb";
             this.loginEmail_txtb.Size = new System.Drawing.Size(201, 20);
-            this.loginEmail_txtb.TabIndex = 4;
+            this.loginEmail_txtb.TabIndex = 3;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.label3.Location = new System.Drawing.Point(53, 136);
+            this.label3.Location = new System.Drawing.Point(79, 166);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 17);
-            this.label3.TabIndex = 5;
+            this.label3.TabIndex = 4;
             this.label3.Text = "Почта";
-            // 
-            // loginPassword_txtb
-            // 
-            this.loginPassword_txtb.Location = new System.Drawing.Point(56, 199);
-            this.loginPassword_txtb.Name = "loginPassword_txtb";
-            this.loginPassword_txtb.Size = new System.Drawing.Size(201, 20);
-            this.loginPassword_txtb.TabIndex = 7;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.label4.Location = new System.Drawing.Point(53, 179);
+            this.label4.Location = new System.Drawing.Point(79, 209);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(57, 17);
-            this.label4.TabIndex = 8;
+            this.label4.TabIndex = 5;
             this.label4.Text = "Пароль";
             // 
-            // ProfileForm
+            // loginPassword_txtb
+            // 
+            this.loginPassword_txtb.Location = new System.Drawing.Point(80, 229);
+            this.loginPassword_txtb.Name = "loginPassword_txtb";
+            this.loginPassword_txtb.Size = new System.Drawing.Size(201, 20);
+            this.loginPassword_txtb.TabIndex = 6;
+            // 
+            // button1
+            // 
+            this.button1.AutoSize = true;
+            this.button1.Location = new System.Drawing.Point(114, 255);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(123, 23);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Зарегистрироваться";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(202, 395);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(151, 43);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "Если у вас есть логин";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(320, 450);
-            this.Controls.Add(this.label4);
+            this.ClientSize = new System.Drawing.Size(365, 450);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.loginPassword_txtb);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.loginEmail_txtb);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.loginName_txtb);
-            this.Name = "ProfileForm";
-            this.Text = "ProfileForm";
+            this.Name = "LoginForm";
+            this.Text = "LoginForm";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -108,10 +145,13 @@
         #endregion
 
         private System.Windows.Forms.TextBox loginName_txtb;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox loginEmail_txtb;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox loginPassword_txtb;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox loginPassword_txtb;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace SecondProject_Auto
 {
-    public partial class AutosList : Form
+    public partial class AutosListForm : Form
     {
         List<Auto> autos;
-        public AutosList(List<Auto> autos)
+        public AutosListForm(List<Auto> autos)
         {
             InitializeComponent();
             this.autos = autos;

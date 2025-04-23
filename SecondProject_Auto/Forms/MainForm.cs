@@ -9,12 +9,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SecondProject_Auto;
+using SecondProject_Auto.Forms;
 
 namespace SecondProject_Auto
 {
     public partial class MainForm : Form
     {
-        public List<Auto> Autos { get; set; }
         public MainForm()
         {
             InitializeComponent();
@@ -24,48 +24,17 @@ namespace SecondProject_Auto
         {
             using (AutoContext db = new AutoContext())
             {
-                Autos = db.Autos.ToList();
+                var autos = db.Autos.ToList();
+            }
+            using (UserContext db2 = new UserContext())
+            {
+                var users = db2.Users.ToList(); 
             }
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-            AutosList autosList = new AutosList(autos);
-            if (autosList.ShowDialog() == DialogResult.OK)
-            {
-                
-            }
+            LoginForm loginForm = new LoginForm();
+            loginForm.ShowDialog();
         }
-        private List<Auto> autos = new List<Auto>
-        {
-            new Auto
-            {
-                Name = "Tesla Model S",
-                PhotoFilePath = "tesla.jpg",
-                AutoType = "Electric luxury sedan.",
-                Price = 89990m
-            },
-            new Auto
-            {
-                Name = "BMW M3",
-                PhotoFilePath = "bmw.jpg",
-                AutoType = "High-performance sports car.",
-                Price = 72800m
-            },
-            new Auto
-            {
-                Name = "Ford F-150",
-                PhotoFilePath = "ford.jpg",
-                AutoType = "Durable and powerful pickup truck.",
-                Price = 34550m
-            },
-            new Auto
-            {
-                Name = "Audi Q5",
-                PhotoFilePath = "audi.jpg",
-                AutoType = "Compact luxury SUV.",
-                Price = 43500m
-            }
-        };
     }
 }

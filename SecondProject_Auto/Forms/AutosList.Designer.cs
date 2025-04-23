@@ -1,6 +1,6 @@
 ﻿namespace SecondProject_Auto
 {
-    partial class AutosList
+    partial class AutosListForm
     {
         /// <summary>
         /// Required designer variable.
@@ -42,13 +42,13 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(776, 426);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
-            // AutosList
+            // AutosListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Name = "AutosList";
+            this.Name = "AutosListForm";
             this.Text = "AutosList";
             this.ResumeLayout(false);
 
