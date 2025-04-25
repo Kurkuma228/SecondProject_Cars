@@ -1,23 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SecondProject_Auto.Forms
 {
-    public partial class LoginForm : Form
+    public partial class Registration_Form : Form
     {
-        public LoginForm()
+        public Registration_Form()
         {
             InitializeComponent();
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void register_btn_Click(object sender, EventArgs e)
         {
             try
             {
@@ -49,26 +43,29 @@ namespace SecondProject_Auto.Forms
                     {
                         Name = loginName,
                         Email = loginEmail,
-                        Password = loginPassword
+                        Password = HashPassword(loginPassword)
                     };
 
                     context.Users.Add(user);
                     context.SaveChanges();
                 }
                 MessageBox.Show("Вы успешно зарегистрированы");
-                this.DialogResult = DialogResult.OK;
-                this.Close();
+                DialogResult = DialogResult.OK;
+                Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Ошибка при регистрации: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private void button2_Click(object sender, EventArgs e)
+        private string HashPassword(string password)
         {
-            MainFormWithLogin mainFormWithLogin = new MainFormWithLogin();
-            mainFormWithLogin.ShowDialog();
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                byte[] bytes = Encoding.UTF8.GetBytes(password);
+                byte[] hash = sha256.ComputeHash(bytes);
+                return Convert.ToBase64String(hash);
+            }
         }
     }
 }

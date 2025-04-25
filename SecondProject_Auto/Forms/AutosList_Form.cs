@@ -23,7 +23,6 @@ namespace SecondProject_Auto
         {
             foreach (var auto in autos)
             {
-                // Создаем панель для одного автомобиля
                 Panel autoPanel = new Panel
                 {
                     Width = 300,
@@ -32,16 +31,14 @@ namespace SecondProject_Auto
                     Margin = new Padding(10)
                 };
 
-                // PictureBox для изображения
                 PictureBox pictureBox = new PictureBox
                 {
                     SizeMode = PictureBoxSizeMode.Zoom,
                     Dock = DockStyle.Top,
                     Height = 100,
-                    //Image = Image.FromFile(auto.PhotoFilePath) // Загрузка изображения
+
                 };
 
-                // Label для названия и описания
                 Label nameLabel = new Label
                 {
                     Text = auto.Name,
@@ -60,7 +57,6 @@ namespace SecondProject_Auto
                     TextAlign = ContentAlignment.MiddleCenter
                 };
 
-                // Button для деталей
                 Button detailsButton = new Button
                 {
                     Text = "View Details",
@@ -69,13 +65,11 @@ namespace SecondProject_Auto
                 };
                 detailsButton.Click += (s, e) => ShowDetails(auto);
 
-                // Добавляем элементы на панель
                 autoPanel.Controls.Add(detailsButton);
                 autoPanel.Controls.Add(descriptionLabel);
                 autoPanel.Controls.Add(nameLabel);
                 autoPanel.Controls.Add(pictureBox);
 
-                // Добавляем панель в FlowLayoutPanel
                 flowLayoutPanel1.Controls.Add(autoPanel);
             }
         }

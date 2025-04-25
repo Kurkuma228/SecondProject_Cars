@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SecondProject_Auto
 {
-    public partial class ProfileForm : Form
+    public partial class Profile_Form : Form
     {
-        public ProfileForm()
+        public Profile_Form()
         {
             InitializeComponent();
         }

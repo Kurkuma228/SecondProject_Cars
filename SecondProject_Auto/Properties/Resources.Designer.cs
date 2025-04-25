@@ -103,6 +103,16 @@ namespace SecondProject_Auto.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap v8085f52 {
+            get {
+                object obj = ResourceManager.GetObject("v8085f52", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Машины {
             get {
                 object obj = ResourceManager.GetObject("Машины", resourceCulture);

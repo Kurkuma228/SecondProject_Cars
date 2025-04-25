@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace SecondProject_Auto.Forms
 {
-    public partial class MainFormWithLogin : Form
+    public partial class MainWithLogin_Form : Form
     {
         public List<Auto> Autos { get; set; }
-        public MainFormWithLogin()
+        public MainWithLogin_Form()
         {
             InitializeComponent();
         }
@@ -57,5 +57,11 @@ namespace SecondProject_Auto.Forms
                 Price = 43500m
             }
         };
+
+        private void profile_btn_Click(object sender, EventArgs e)
+        {
+            var form = new Login_Form();
+            form.ShowDialog();
+        }
     }
 }
