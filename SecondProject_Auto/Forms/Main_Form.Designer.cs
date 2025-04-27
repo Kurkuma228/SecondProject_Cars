@@ -98,7 +98,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Lato Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(71, 210);
+            this.label3.Location = new System.Drawing.Point(71, 187);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(450, 19);
             this.label3.TabIndex = 6;
@@ -113,7 +113,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Lato", 30.25F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(66, 139);
+            this.label2.Location = new System.Drawing.Point(66, 138);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(595, 49);
             this.label2.TabIndex = 3;
@@ -125,7 +125,7 @@
             this.start_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.start_btn.Font = new System.Drawing.Font("Lato Semibold", 12.25F, System.Drawing.FontStyle.Bold);
             this.start_btn.ForeColor = System.Drawing.Color.White;
-            this.start_btn.Location = new System.Drawing.Point(75, 254);
+            this.start_btn.Location = new System.Drawing.Point(75, 269);
             this.start_btn.Name = "start_btn";
             this.start_btn.Size = new System.Drawing.Size(122, 40);
             this.start_btn.TabIndex = 5;
