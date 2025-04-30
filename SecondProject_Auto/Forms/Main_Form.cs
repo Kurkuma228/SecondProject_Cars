@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Drawing.Drawing2D;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using SecondProject_Auto.Forms;
@@ -11,6 +13,11 @@ namespace SecondProject_Auto
         {
             InitializeComponent();
             LoadData();
+
+            #region AdditionalSettingsForm
+            label2.Parent = pictureBox2;
+            label3.Parent = pictureBox2;
+            #endregion
         }
         public void LoadData()
         {
@@ -51,6 +58,20 @@ namespace SecondProject_Auto
         {
             var form = new Registration_Form();
             form.ShowDialog();
+        }
+        private void PictureBox2_Resize(object sender, EventArgs e)
+        {
+            if (pictureBox2.Image != null)
+            {
+                using (Graphics g = Graphics.FromImage(pictureBox2.Image))
+                {
+                    g.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                    g.SmoothingMode = SmoothingMode.HighQuality;
+                    g.PixelOffsetMode = PixelOffsetMode.HighQuality;
+                    g.CompositingQuality = CompositingQuality.HighQuality;
+                }
+                pictureBox2.Invalidate(); 
+            }
         }
     }
  }
