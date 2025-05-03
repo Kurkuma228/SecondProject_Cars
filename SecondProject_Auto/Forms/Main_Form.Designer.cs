@@ -91,7 +91,7 @@
             this.start_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.start_btn.Font = new System.Drawing.Font("Lato Semibold", 12.25F, System.Drawing.FontStyle.Bold);
             this.start_btn.ForeColor = System.Drawing.Color.White;
-            this.start_btn.Location = new System.Drawing.Point(75, 275);
+            this.start_btn.Location = new System.Drawing.Point(75, 267);
             this.start_btn.Name = "start_btn";
             this.start_btn.Size = new System.Drawing.Size(122, 40);
             this.start_btn.TabIndex = 5;
