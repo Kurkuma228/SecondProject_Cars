@@ -11,6 +11,7 @@ namespace SecondProject_Auto
         {
             InitializeComponent();
             LoadData();
+            label2.Parent = pictureBox2;
         }
         public void LoadData()
         {
@@ -37,7 +38,19 @@ namespace SecondProject_Auto
             }
             else
             {
-                MessageBox.Show("Войдите в систему");
+                var logform = new Login_Form();
+                logform.ShowDialog();
+                if(Login_Form.IsLoggedIn)
+                {
+                    var form = new MainWithLogin_Form();
+
+                    ApplicationContext context = (ApplicationContext)Application.OpenForms[0].Tag;
+                    context.MainForm = form;
+
+                    form.Show();
+                    Close();
+                }
+                
             }
         }
 

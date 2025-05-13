@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -62,6 +63,23 @@ namespace SecondProject_Auto.Forms
         {
             var form = new Login_Form();
             form.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+            config.AppSettings.Settings["IsLoggedIn"].Value = "false";
+            config.AppSettings.Settings["UserId"].Value = null;
+            config.Save(ConfigurationSaveMode.Modified);
+            ConfigurationManager.RefreshSection("appSettings");
+
+            var form = new Main_Form();
+
+            ApplicationContext context = (ApplicationContext)Application.OpenForms[0].Tag;
+            context.MainForm = form;
+
+            form.Show();
+            Close();
         }
     }
 }

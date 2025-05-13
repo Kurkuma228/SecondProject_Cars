@@ -29,18 +29,19 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.profile_btn = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.start_btn = new System.Windows.Forms.Button();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.profile_btn = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -52,16 +53,6 @@
             this.label1.Size = new System.Drawing.Size(127, 26);
             this.label1.TabIndex = 3;
             this.label1.Text = "Car-Search";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::SecondProject_Auto.Properties.Resources.Icon;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 6);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
             // 
             // button2
             // 
@@ -90,6 +81,31 @@
             this.tabControl1.Size = new System.Drawing.Size(924, 511);
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.tabControl1.TabIndex = 7;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Font = new System.Drawing.Font("Lato", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tabPage2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(106)))), ((int)(((byte)(232)))));
+            this.tabPage2.Location = new System.Drawing.Point(4, 29);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(916, 478);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Улучшенный поиск";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // profile_btn
+            // 
+            this.profile_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(106)))), ((int)(((byte)(232)))));
+            this.profile_btn.Font = new System.Drawing.Font("Lato Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.profile_btn.ForeColor = System.Drawing.Color.White;
+            this.profile_btn.Location = new System.Drawing.Point(836, 12);
+            this.profile_btn.Name = "profile_btn";
+            this.profile_btn.Size = new System.Drawing.Size(96, 30);
+            this.profile_btn.TabIndex = 8;
+            this.profile_btn.Text = "Профиль";
+            this.profile_btn.UseVisualStyleBackColor = false;
+            this.profile_btn.Click += new System.EventHandler(this.profile_btn_Click);
             // 
             // tabPage1
             // 
@@ -150,30 +166,25 @@
             this.start_btn.Text = "Начать";
             this.start_btn.UseVisualStyleBackColor = false;
             // 
-            // tabPage2
+            // pictureBox1
             // 
-            this.tabPage2.Font = new System.Drawing.Font("Lato", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tabPage2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(106)))), ((int)(((byte)(232)))));
-            this.tabPage2.Location = new System.Drawing.Point(4, 29);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(916, 478);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Улучшенный поиск";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.pictureBox1.Image = global::SecondProject_Auto.Properties.Resources.Icon;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
             // 
-            // profile_btn
+            // button1
             // 
-            this.profile_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(106)))), ((int)(((byte)(232)))));
-            this.profile_btn.Font = new System.Drawing.Font("Lato Semibold", 11.25F, System.Drawing.FontStyle.Bold);
-            this.profile_btn.ForeColor = System.Drawing.Color.White;
-            this.profile_btn.Location = new System.Drawing.Point(836, 12);
-            this.profile_btn.Name = "profile_btn";
-            this.profile_btn.Size = new System.Drawing.Size(96, 30);
-            this.profile_btn.TabIndex = 8;
-            this.profile_btn.Text = "Профиль";
-            this.profile_btn.UseVisualStyleBackColor = false;
-            this.profile_btn.Click += new System.EventHandler(this.profile_btn_Click);
+            this.button1.Location = new System.Drawing.Point(712, 19);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(94, 23);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Выйти";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // MainWithLogin_Form
             // 
@@ -181,17 +192,20 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(948, 562);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.profile_btn);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "MainWithLogin_Form";
             this.Text = "MainFormWithLogin";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -209,5 +223,6 @@
         private System.Windows.Forms.Button start_btn;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button profile_btn;
+        private System.Windows.Forms.Button button1;
     }
 }
