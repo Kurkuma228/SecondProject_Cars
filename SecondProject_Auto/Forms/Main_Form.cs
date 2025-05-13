@@ -11,7 +11,7 @@ namespace SecondProject_Auto
         {
             InitializeComponent();
             LoadData();
-            label2.Parent = car_pbox;
+            label2.Parent = pictureBox2;
         }
         public void LoadData()
         {
