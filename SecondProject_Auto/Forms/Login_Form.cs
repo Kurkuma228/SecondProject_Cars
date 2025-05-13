@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Forms;
@@ -15,6 +16,8 @@ namespace SecondProject_Auto.Forms
         public Login_Form()
         {
             InitializeComponent();
+
+            
         }
 
         private void login_btn_Click(object sender, EventArgs e)
@@ -99,6 +102,37 @@ namespace SecondProject_Auto.Forms
                 byte[] hash = sha256.ComputeHash(bytes);
                 return Convert.ToBase64String(hash);
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Visible = false;
+            using (Registration_Form registration_Form = new Registration_Form())
+            {
+                registration_Form.ShowDialog();
+            }
+             Visible = true;
+            
+        }
+
+        private void loginNameEmail_txtb_Enter(object sender, EventArgs e)
+        {
+            label1.Visible = false;
+        }
+
+        private void loginNameEmail_txtb_Leave(object sender, EventArgs e)
+        {
+            label1.Visible = true;
+        }
+
+        private void loginPassword_txtb_Enter(object sender, EventArgs e)
+        {
+            label2.Visible = false;
+        }
+
+        private void loginPassword_txtb_Leave(object sender, EventArgs e)
+        {
+            label2.Visible=true;
         }
     }
 }
