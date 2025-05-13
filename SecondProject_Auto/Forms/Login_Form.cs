@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
+
 namespace SecondProject_Auto.Forms
 {
     public partial class Login_Form : Form
@@ -116,28 +117,22 @@ namespace SecondProject_Auto.Forms
 
         private void loginNameEmail_txtb_Enter(object sender, EventArgs e)
         {
-            loginAndEmail_lbl.Visible = false;
+            label1.Visible = false;
         }
 
         private void loginNameEmail_txtb_Leave(object sender, EventArgs e)
         {
-            if (loginNameEmail_txtb.Text == "")
-            {
-                loginAndEmail_lbl.Visible = true;
-            }
+            label1.Visible = true;
         }
 
         private void loginPassword_txtb_Enter(object sender, EventArgs e)
         {
-            passwrod_lbl.Visible = false;
+            label2.Visible = false;
         }
 
         private void loginPassword_txtb_Leave(object sender, EventArgs e)
         {
-            if (loginPassword_txtb.Text == "")
-            {
-                passwrod_lbl.Visible = true;
-            }
+            label2.Visible=true;
         }
     }
 }
