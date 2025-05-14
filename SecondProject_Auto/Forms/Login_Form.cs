@@ -117,22 +117,28 @@ namespace SecondProject_Auto.Forms
 
         private void loginNameEmail_txtb_Enter(object sender, EventArgs e)
         {
-            label1.Visible = false;
+            loginAndEmail_lbl.Visible = false;
         }
 
         private void loginNameEmail_txtb_Leave(object sender, EventArgs e)
         {
-            label1.Visible = true;
+            if (loginNameEmail_txtb.Text == "")
+            {
+                loginAndEmail_lbl.Visible = true;
+            }
         }
 
         private void loginPassword_txtb_Enter(object sender, EventArgs e)
         {
-            label2.Visible = false;
+            passwrod_lbl.Visible = false;
         }
 
         private void loginPassword_txtb_Leave(object sender, EventArgs e)
         {
-            label2.Visible=true;
+            if (loginPassword_txtb.Text == "")
+            {
+                passwrod_lbl.Visible = true;
+            }
         }
     }
 }

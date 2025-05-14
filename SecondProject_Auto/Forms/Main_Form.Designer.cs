@@ -28,26 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.title_lbl = new System.Windows.Forms.Label();
             this.start_btn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.car_pbox = new System.Windows.Forms.PictureBox();
+            this.icon_pbox = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.car_pbox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.icon_pbox)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // title_lbl
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.title_lbl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(47, 7);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(119, 24);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Car-Search";
+            this.title_lbl.AutoSize = true;
+            this.title_lbl.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.title_lbl.Location = new System.Drawing.Point(47, 7);
+            this.title_lbl.Name = "title_lbl";
+            this.title_lbl.Size = new System.Drawing.Size(119, 24);
+            this.title_lbl.TabIndex = 2;
+            this.title_lbl.Text = "Car-Search";
             // 
             // start_btn
             // 
@@ -78,25 +78,25 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Подбери себе идеальный автомобиль";
             // 
-            // pictureBox2
+            // car_pbox
             // 
-            this.pictureBox2.Image = global::SecondProject_Auto.Properties.Resources._123;
-            this.pictureBox2.Location = new System.Drawing.Point(-3, 37);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(955, 528);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 9;
-            this.pictureBox2.TabStop = false;
+            this.car_pbox.Image = global::SecondProject_Auto.Properties.Resources._123;
+            this.car_pbox.Location = new System.Drawing.Point(-3, 37);
+            this.car_pbox.Name = "car_pbox";
+            this.car_pbox.Size = new System.Drawing.Size(955, 528);
+            this.car_pbox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.car_pbox.TabIndex = 9;
+            this.car_pbox.TabStop = false;
             // 
-            // pictureBox1
+            // icon_pbox
             // 
-            this.pictureBox1.Image = global::SecondProject_Auto.Properties.Resources.Icon;
-            this.pictureBox1.Location = new System.Drawing.Point(16, 6);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.icon_pbox.Image = global::SecondProject_Auto.Properties.Resources.Icon;
+            this.icon_pbox.Location = new System.Drawing.Point(16, 6);
+            this.icon_pbox.Name = "icon_pbox";
+            this.icon_pbox.Size = new System.Drawing.Size(25, 25);
+            this.icon_pbox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.icon_pbox.TabIndex = 1;
+            this.icon_pbox.TabStop = false;
             // 
             // Main_Form
             // 
@@ -105,27 +105,27 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(948, 562);
             this.Controls.Add(this.start_btn);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.title_lbl);
+            this.Controls.Add(this.icon_pbox);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.car_pbox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "Main_Form";
             this.Text = "Стартовое окно";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.car_pbox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.icon_pbox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox icon_pbox;
+        private System.Windows.Forms.Label title_lbl;
         private System.Windows.Forms.Button start_btn;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox car_pbox;
     }
 }
 
