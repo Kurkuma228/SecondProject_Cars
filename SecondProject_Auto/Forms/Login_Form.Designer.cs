@@ -32,15 +32,15 @@
             this.login_lbl = new System.Windows.Forms.Label();
             this.loginPassword_txtb = new System.Windows.Forms.TextBox();
             this.login_btn = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.register_btn = new System.Windows.Forms.Button();
+            this.loginAndEmail_lbl = new System.Windows.Forms.Label();
+            this.passwrod_lbl = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.white_pbox = new System.Windows.Forms.PictureBox();
+            this.back_pbox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.white_pbox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.back_pbox)).BeginInit();
             this.SuspendLayout();
             // 
             // loginNameEmail_txtb
@@ -91,40 +91,40 @@
             this.login_btn.UseVisualStyleBackColor = false;
             this.login_btn.Click += new System.EventHandler(this.login_btn_Click);
             // 
-            // button1
+            // register_btn
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(234)))), ((int)(((byte)(207)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(367, 364);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(227, 28);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Зарегистрироваться";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.register_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(234)))), ((int)(((byte)(207)))));
+            this.register_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.register_btn.ForeColor = System.Drawing.Color.White;
+            this.register_btn.Location = new System.Drawing.Point(367, 364);
+            this.register_btn.Name = "register_btn";
+            this.register_btn.Size = new System.Drawing.Size(227, 28);
+            this.register_btn.TabIndex = 8;
+            this.register_btn.Text = "Зарегистрироваться";
+            this.register_btn.UseVisualStyleBackColor = false;
+            this.register_btn.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label1
+            // loginAndEmail_lbl
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.ForeColor = System.Drawing.Color.Gray;
-            this.label1.Location = new System.Drawing.Point(374, 242);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 13);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Логин или почта";
+            this.loginAndEmail_lbl.AutoSize = true;
+            this.loginAndEmail_lbl.BackColor = System.Drawing.Color.White;
+            this.loginAndEmail_lbl.ForeColor = System.Drawing.Color.Gray;
+            this.loginAndEmail_lbl.Location = new System.Drawing.Point(374, 242);
+            this.loginAndEmail_lbl.Name = "loginAndEmail_lbl";
+            this.loginAndEmail_lbl.Size = new System.Drawing.Size(90, 13);
+            this.loginAndEmail_lbl.TabIndex = 12;
+            this.loginAndEmail_lbl.Text = "Логин или почта";
             // 
-            // label2
+            // passwrod_lbl
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.ForeColor = System.Drawing.Color.Gray;
-            this.label2.Location = new System.Drawing.Point(374, 282);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 13);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "Пароль";
+            this.passwrod_lbl.AutoSize = true;
+            this.passwrod_lbl.BackColor = System.Drawing.Color.White;
+            this.passwrod_lbl.ForeColor = System.Drawing.Color.Gray;
+            this.passwrod_lbl.Location = new System.Drawing.Point(374, 282);
+            this.passwrod_lbl.Name = "passwrod_lbl";
+            this.passwrod_lbl.Size = new System.Drawing.Size(45, 13);
+            this.passwrod_lbl.TabIndex = 13;
+            this.passwrod_lbl.Text = "Пароль";
             // 
             // pictureBox3
             // 
@@ -136,24 +136,24 @@
             this.pictureBox3.TabIndex = 14;
             this.pictureBox3.TabStop = false;
             // 
-            // pictureBox1
+            // white_pbox
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.Location = new System.Drawing.Point(296, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(372, 563);
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
+            this.white_pbox.BackColor = System.Drawing.Color.White;
+            this.white_pbox.Location = new System.Drawing.Point(296, 0);
+            this.white_pbox.Name = "white_pbox";
+            this.white_pbox.Size = new System.Drawing.Size(372, 563);
+            this.white_pbox.TabIndex = 9;
+            this.white_pbox.TabStop = false;
             // 
-            // pictureBox2
+            // back_pbox
             // 
-            this.pictureBox2.Image = global::SecondProject_Auto.Properties.Resources.LoginAndRegistration;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(948, 563);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 10;
-            this.pictureBox2.TabStop = false;
+            this.back_pbox.Image = global::SecondProject_Auto.Properties.Resources.LoginAndRegistration;
+            this.back_pbox.Location = new System.Drawing.Point(0, 0);
+            this.back_pbox.Name = "back_pbox";
+            this.back_pbox.Size = new System.Drawing.Size(948, 563);
+            this.back_pbox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.back_pbox.TabIndex = 10;
+            this.back_pbox.TabStop = false;
             // 
             // Login_Form
             // 
@@ -161,22 +161,22 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(948, 562);
             this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.passwrod_lbl);
+            this.Controls.Add(this.register_btn);
             this.Controls.Add(this.login_btn);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.loginAndEmail_lbl);
             this.Controls.Add(this.loginNameEmail_txtb);
             this.Controls.Add(this.loginPassword_txtb);
             this.Controls.Add(this.login_lbl);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.white_pbox);
+            this.Controls.Add(this.back_pbox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "Login_Form";
             this.Text = "Вход в профиль";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.white_pbox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.back_pbox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -188,11 +188,11 @@
         private System.Windows.Forms.Label login_lbl;
         private System.Windows.Forms.TextBox loginPassword_txtb;
         private System.Windows.Forms.Button login_btn;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button register_btn;
+        private System.Windows.Forms.PictureBox white_pbox;
+        private System.Windows.Forms.PictureBox back_pbox;
+        private System.Windows.Forms.Label loginAndEmail_lbl;
+        private System.Windows.Forms.Label passwrod_lbl;
         private System.Windows.Forms.PictureBox pictureBox3;
     }
 }
