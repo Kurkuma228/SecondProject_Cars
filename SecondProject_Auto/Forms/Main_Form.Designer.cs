@@ -43,7 +43,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.title_lbl.AutoSize = true;
             this.title_lbl.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.title_lbl.Location = new System.Drawing.Point(47, 7);
+            this.title_lbl.Location = new System.Drawing.Point(43, 6);
             this.title_lbl.Name = "title_lbl";
             this.title_lbl.Size = new System.Drawing.Size(119, 24);
             this.title_lbl.TabIndex = 2;
@@ -55,7 +55,7 @@
             this.start_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.start_btn.Font = new System.Drawing.Font("Lato Semibold", 12.25F, System.Drawing.FontStyle.Bold);
             this.start_btn.ForeColor = System.Drawing.Color.White;
-            this.start_btn.Location = new System.Drawing.Point(75, 275);
+            this.start_btn.Location = new System.Drawing.Point(44, 269);
             this.start_btn.Name = "start_btn";
             this.start_btn.Size = new System.Drawing.Size(122, 40);
             this.start_btn.TabIndex = 5;
@@ -72,7 +72,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Lato", 30.25F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(55, 188);
+            this.label2.Location = new System.Drawing.Point(42, 175);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(758, 49);
             this.label2.TabIndex = 3;
@@ -91,11 +91,11 @@
             // icon_pbox
             // 
             this.icon_pbox.Image = global::SecondProject_Auto.Properties.Resources.Icon;
-            this.icon_pbox.Location = new System.Drawing.Point(16, 6);
+            this.icon_pbox.Location = new System.Drawing.Point(12, 2);
             this.icon_pbox.Name = "icon_pbox";
-            this.icon_pbox.Size = new System.Drawing.Size(25, 25);
-            this.icon_pbox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.icon_pbox.TabIndex = 1;
+            this.icon_pbox.Size = new System.Drawing.Size(25, 29);
+            this.icon_pbox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.icon_pbox.TabIndex = 10;
             this.icon_pbox.TabStop = false;
             // 
             // Main_Form
@@ -104,9 +104,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(948, 562);
+            this.Controls.Add(this.icon_pbox);
             this.Controls.Add(this.start_btn);
             this.Controls.Add(this.title_lbl);
-            this.Controls.Add(this.icon_pbox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.car_pbox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -121,11 +121,11 @@
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox icon_pbox;
         private System.Windows.Forms.Label title_lbl;
         private System.Windows.Forms.Button start_btn;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox car_pbox;
+        private System.Windows.Forms.PictureBox icon_pbox;
     }
 }
 

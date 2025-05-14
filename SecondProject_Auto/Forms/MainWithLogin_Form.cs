@@ -13,43 +13,29 @@ namespace SecondProject_Auto.Forms
 {
     public partial class MainWithLogin_Form : Form
     {
-        public List<Auto> Autos { get; set; }
         public MainWithLogin_Form()
         {
             InitializeComponent();
-        }
-
-        private List<Auto> autos = new List<Auto>
-        {
-            new Auto
+            Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+            if (config.AppSettings.Settings["UserId"].Value == "2")
             {
-                Name = "Tesla Model S",
-                PhotoFilePath = "tesla.jpg",
-                AutoType = "Electric luxury sedan.",
-                Price = 89990m
-            },
-            new Auto
-            {
-                Name = "BMW M3",
-                PhotoFilePath = "bmw.jpg",
-                AutoType = "High-performance sports car.",
-                Price = 72800m
-            },
-            new Auto
-            {
-                Name = "Ford F-150",
-                PhotoFilePath = "ford.jpg",
-                AutoType = "Durable and powerful pickup truck.",
-                Price = 34550m
-            },
-            new Auto
-            {
-                Name = "Audi Q5",
-                PhotoFilePath = "audi.jpg",
-                AutoType = "Compact luxury SUV.",
-                Price = 43500m
+                button1.Visible = true;
             }
-        };
+                using (var context = new AutoContext())
+            {
+                var cars = context.Autos.ToList();
+                foreach (var car in cars)
+                {
+                    CarControl carControl = new CarControl();
+                    carControl.Name = car.Name;
+                    carControl.Id = car.Id;
+                    carControl.Price = car.Price;
+                    carControl.ImageUrl = car.PhotoFilePath;
+                    flowLayoutPanel1.Controls.Add(carControl);
+                }
+            }
+
+        }
 
         private void profile_btn_Click(object sender, EventArgs e)
         {
@@ -57,7 +43,7 @@ namespace SecondProject_Auto.Forms
             form.ShowDialog();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void exit_btn_Click(object sender, EventArgs e)
         {
             Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
             config.AppSettings.Settings["IsLoggedIn"].Value = "false";
@@ -69,6 +55,7 @@ namespace SecondProject_Auto.Forms
 
             ApplicationContext context = (ApplicationContext)Application.OpenForms[0].Tag;
             context.MainForm = form;
+            form.Tag = context;
 
             form.Show();
             Close();

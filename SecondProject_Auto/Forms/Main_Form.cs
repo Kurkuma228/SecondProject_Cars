@@ -32,13 +32,14 @@ namespace SecondProject_Auto
 
                 ApplicationContext context = (ApplicationContext)Application.OpenForms[0].Tag;
                 context.MainForm = form;
-
+                form.Tag = context;
                 form.Show();
                 Close();
             }
             else
             {
                 var logform = new Login_Form();
+                Visible = false;
                 logform.ShowDialog();
                 if(Login_Form.IsLoggedIn)
                 {
@@ -46,11 +47,14 @@ namespace SecondProject_Auto
 
                     ApplicationContext context = (ApplicationContext)Application.OpenForms[0].Tag;
                     context.MainForm = form;
-
+                    form.Tag = context;
                     form.Show();
                     Close();
                 }
-                
+                if (!Login_Form.IsLoggedIn)
+                {
+                    Visible = true;
+                }
             }
         }
 
