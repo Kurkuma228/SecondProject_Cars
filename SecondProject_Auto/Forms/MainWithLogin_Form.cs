@@ -19,14 +19,6 @@ namespace SecondProject_Auto.Forms
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            AutosListForm autosList = new AutosListForm(autos);
-            if (autosList.ShowDialog() == DialogResult.OK)
-            {
-
-            }
-        }
         private List<Auto> autos = new List<Auto>
         {
             new Auto

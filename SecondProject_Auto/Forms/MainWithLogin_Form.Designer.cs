@@ -29,14 +29,13 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.profile_btn = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.start_btn = new System.Windows.Forms.Button();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.profile_btn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
@@ -53,16 +52,6 @@
             this.label1.Size = new System.Drawing.Size(127, 26);
             this.label1.TabIndex = 3;
             this.label1.Text = "Car-Search";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(176, 6);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(158, 23);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Список Машин";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // tabControl1
             // 
@@ -81,31 +70,6 @@
             this.tabControl1.Size = new System.Drawing.Size(924, 511);
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.tabControl1.TabIndex = 7;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Font = new System.Drawing.Font("Lato", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tabPage2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(106)))), ((int)(((byte)(232)))));
-            this.tabPage2.Location = new System.Drawing.Point(4, 29);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(916, 478);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Улучшенный поиск";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // profile_btn
-            // 
-            this.profile_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(106)))), ((int)(((byte)(232)))));
-            this.profile_btn.Font = new System.Drawing.Font("Lato Semibold", 11.25F, System.Drawing.FontStyle.Bold);
-            this.profile_btn.ForeColor = System.Drawing.Color.White;
-            this.profile_btn.Location = new System.Drawing.Point(836, 12);
-            this.profile_btn.Name = "profile_btn";
-            this.profile_btn.Size = new System.Drawing.Size(96, 30);
-            this.profile_btn.TabIndex = 8;
-            this.profile_btn.Text = "Профиль";
-            this.profile_btn.UseVisualStyleBackColor = false;
-            this.profile_btn.Click += new System.EventHandler(this.profile_btn_Click);
             // 
             // tabPage1
             // 
@@ -166,6 +130,31 @@
             this.start_btn.Text = "Начать";
             this.start_btn.UseVisualStyleBackColor = false;
             // 
+            // tabPage2
+            // 
+            this.tabPage2.Font = new System.Drawing.Font("Lato", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tabPage2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(106)))), ((int)(((byte)(232)))));
+            this.tabPage2.Location = new System.Drawing.Point(4, 29);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(916, 478);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Улучшенный поиск";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // profile_btn
+            // 
+            this.profile_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(106)))), ((int)(((byte)(232)))));
+            this.profile_btn.Font = new System.Drawing.Font("Lato Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.profile_btn.ForeColor = System.Drawing.Color.White;
+            this.profile_btn.Location = new System.Drawing.Point(836, 12);
+            this.profile_btn.Name = "profile_btn";
+            this.profile_btn.Size = new System.Drawing.Size(96, 30);
+            this.profile_btn.TabIndex = 8;
+            this.profile_btn.Text = "Профиль";
+            this.profile_btn.UseVisualStyleBackColor = false;
+            this.profile_btn.Click += new System.EventHandler(this.profile_btn_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::SecondProject_Auto.Properties.Resources.Icon;
@@ -195,7 +184,6 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.profile_btn);
             this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -215,7 +203,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Label label3;
