@@ -18,6 +18,7 @@ namespace SecondProject_Auto.Forms
                 string loginName = loginName_txtb.Text;
                 string loginEmail = loginEmail_txtb.Text;
                 string loginPassword = loginPassword_txtb.Text;
+                string loginSecPassword = loginSecPassword_txtb.Text;
 
                 if (string.IsNullOrWhiteSpace(loginName))
                 {
@@ -37,17 +38,25 @@ namespace SecondProject_Auto.Forms
                     return;
                 }
 
-                using (var context = new UserContext())
+                if(string.IsNullOrWhiteSpace(loginSecPassword))
                 {
-                    var user = new User
+                    MessageBox.Show("Повторите пароль");
+                    return;
+                }
+                if (loginPassword == loginSecPassword)
+                {
+                    using (var context = new UserContext())
                     {
-                        Name = loginName,
-                        Email = loginEmail,
-                        Password = HashPassword(loginPassword)
-                    };
+                        var user = new User
+                        {
+                            Name = loginName,
+                            Email = loginEmail,
+                            Password = HashPassword(loginPassword)
+                        };
 
-                    context.Users.Add(user);
-                    context.SaveChanges();
+                        context.Users.Add(user);
+                        context.SaveChanges();
+                    }
                 }
                 MessageBox.Show("Вы успешно зарегистрированы");
                 DialogResult = DialogResult.OK;
@@ -66,6 +75,24 @@ namespace SecondProject_Auto.Forms
                 byte[] hash = sha256.ComputeHash(bytes);
                 return Convert.ToBase64String(hash);
             }
+        }
+
+        private void loginName_txtb_Enter(object sender, EventArgs e)
+        {
+            name_lbl.Visible = false;
+        }
+
+        private void loginName_txtb_Leave(object sender, EventArgs e)
+        {
+            if(loginName_txtb.Text == "")
+            {
+               name_lbl.Visible = true;
+            }
+        }
+
+        private void login_btn_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
