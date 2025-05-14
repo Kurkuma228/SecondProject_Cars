@@ -20,7 +20,11 @@ namespace SecondProject_Auto
 
             if (IsLoggedIn)
             {
-                Application.Run(new MainWithLogin_Form());
+                MainWithLogin_Form mainForm = new MainWithLogin_Form();
+                ApplicationContext appContext = new ApplicationContext(mainForm);
+                mainForm.Tag = appContext;
+
+                Application.Run(appContext);
             }
             else
             {

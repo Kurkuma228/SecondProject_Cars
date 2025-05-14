@@ -42,6 +42,7 @@
             this.secPassword_lbl = new System.Windows.Forms.Label();
             this.photo_pbox = new System.Windows.Forms.PictureBox();
             this.login_btn = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.white_pbox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.back_pbox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.photo_pbox)).BeginInit();
@@ -49,19 +50,25 @@
             // 
             // loginPassword_txtb
             // 
+            this.loginPassword_txtb.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.loginPassword_txtb.Location = new System.Drawing.Point(363, 311);
             this.loginPassword_txtb.Multiline = true;
             this.loginPassword_txtb.Name = "loginPassword_txtb";
             this.loginPassword_txtb.Size = new System.Drawing.Size(227, 34);
             this.loginPassword_txtb.TabIndex = 12;
+            this.loginPassword_txtb.Enter += new System.EventHandler(this.loginPassword_txtb_Enter);
+            this.loginPassword_txtb.Leave += new System.EventHandler(this.loginPassword_txtb_Leave);
             // 
             // loginEmail_txtb
             // 
+            this.loginEmail_txtb.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.loginEmail_txtb.Location = new System.Drawing.Point(363, 271);
             this.loginEmail_txtb.Multiline = true;
             this.loginEmail_txtb.Name = "loginEmail_txtb";
             this.loginEmail_txtb.Size = new System.Drawing.Size(227, 34);
             this.loginEmail_txtb.TabIndex = 9;
+            this.loginEmail_txtb.Enter += new System.EventHandler(this.loginEmail_txtb_Enter);
+            this.loginEmail_txtb.Leave += new System.EventHandler(this.loginEmail_txtb_Leave);
             // 
             // name_lbl
             // 
@@ -69,7 +76,7 @@
             this.name_lbl.BackColor = System.Drawing.Color.White;
             this.name_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.name_lbl.ForeColor = System.Drawing.Color.Gray;
-            this.name_lbl.Location = new System.Drawing.Point(374, 243);
+            this.name_lbl.Location = new System.Drawing.Point(374, 242);
             this.name_lbl.Name = "name_lbl";
             this.name_lbl.Size = new System.Drawing.Size(38, 13);
             this.name_lbl.TabIndex = 8;
@@ -77,6 +84,7 @@
             // 
             // loginName_txtb
             // 
+            this.loginName_txtb.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.loginName_txtb.Location = new System.Drawing.Point(363, 231);
             this.loginName_txtb.Multiline = true;
             this.loginName_txtb.Name = "loginName_txtb";
@@ -105,11 +113,11 @@
             this.register_lbl.AutoSize = true;
             this.register_lbl.BackColor = System.Drawing.Color.White;
             this.register_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.25F);
-            this.register_lbl.Location = new System.Drawing.Point(382, 63);
+            this.register_lbl.Location = new System.Drawing.Point(343, 63);
             this.register_lbl.Name = "register_lbl";
-            this.register_lbl.Size = new System.Drawing.Size(186, 33);
+            this.register_lbl.Size = new System.Drawing.Size(277, 33);
             this.register_lbl.TabIndex = 14;
-            this.register_lbl.Text = "Регистрация";
+            this.register_lbl.Text = "Создание профиля";
             // 
             // white_pbox
             // 
@@ -136,7 +144,7 @@
             this.email_lbl.BackColor = System.Drawing.Color.White;
             this.email_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.email_lbl.ForeColor = System.Drawing.Color.Gray;
-            this.email_lbl.Location = new System.Drawing.Point(374, 283);
+            this.email_lbl.Location = new System.Drawing.Point(374, 282);
             this.email_lbl.Name = "email_lbl";
             this.email_lbl.Size = new System.Drawing.Size(37, 13);
             this.email_lbl.TabIndex = 17;
@@ -148,7 +156,7 @@
             this.password_lbl.BackColor = System.Drawing.Color.White;
             this.password_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.password_lbl.ForeColor = System.Drawing.Color.Gray;
-            this.password_lbl.Location = new System.Drawing.Point(374, 323);
+            this.password_lbl.Location = new System.Drawing.Point(374, 322);
             this.password_lbl.Name = "password_lbl";
             this.password_lbl.Size = new System.Drawing.Size(45, 13);
             this.password_lbl.TabIndex = 18;
@@ -156,11 +164,14 @@
             // 
             // loginSecPassword_txtb
             // 
+            this.loginSecPassword_txtb.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.loginSecPassword_txtb.Location = new System.Drawing.Point(363, 351);
             this.loginSecPassword_txtb.Multiline = true;
             this.loginSecPassword_txtb.Name = "loginSecPassword_txtb";
             this.loginSecPassword_txtb.Size = new System.Drawing.Size(227, 34);
             this.loginSecPassword_txtb.TabIndex = 19;
+            this.loginSecPassword_txtb.Enter += new System.EventHandler(this.loginSecPassword_txtb_Enter);
+            this.loginSecPassword_txtb.Leave += new System.EventHandler(this.loginSecPassword_txtb_Leave);
             // 
             // secPassword_lbl
             // 
@@ -168,7 +179,7 @@
             this.secPassword_lbl.BackColor = System.Drawing.Color.White;
             this.secPassword_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.secPassword_lbl.ForeColor = System.Drawing.Color.Gray;
-            this.secPassword_lbl.Location = new System.Drawing.Point(374, 363);
+            this.secPassword_lbl.Location = new System.Drawing.Point(374, 362);
             this.secPassword_lbl.Name = "secPassword_lbl";
             this.secPassword_lbl.Size = new System.Drawing.Size(100, 13);
             this.secPassword_lbl.TabIndex = 20;
@@ -197,11 +208,23 @@
             this.login_btn.UseVisualStyleBackColor = false;
             this.login_btn.Click += new System.EventHandler(this.login_btn_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
+            this.label1.Location = new System.Drawing.Point(458, 185);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 13);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "Слива";
+            // 
             // Registration_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(948, 562);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.login_btn);
             this.Controls.Add(this.photo_pbox);
             this.Controls.Add(this.secPassword_lbl);
@@ -244,5 +267,6 @@
         private System.Windows.Forms.Label secPassword_lbl;
         private System.Windows.Forms.PictureBox photo_pbox;
         private System.Windows.Forms.Button login_btn;
+        private System.Windows.Forms.Label label1;
     }
 }

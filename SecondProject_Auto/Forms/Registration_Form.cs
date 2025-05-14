@@ -57,10 +57,15 @@ namespace SecondProject_Auto.Forms
                         context.Users.Add(user);
                         context.SaveChanges();
                     }
+
+                    MessageBox.Show("Вы успешно зарегистрированы");
+                    DialogResult = DialogResult.OK;
+                    Close();
                 }
-                MessageBox.Show("Вы успешно зарегистрированы");
-                DialogResult = DialogResult.OK;
-                Close();
+                else
+                {
+                    MessageBox.Show("Пароли не совпадают");
+                }
             }
             catch (Exception ex)
             {
@@ -87,6 +92,42 @@ namespace SecondProject_Auto.Forms
             if(loginName_txtb.Text == "")
             {
                name_lbl.Visible = true;
+            }
+        }
+        private void loginPassword_txtb_Enter(object sender, EventArgs e)
+        {
+            password_lbl.Visible = false;
+        }
+
+        private void loginPassword_txtb_Leave(object sender, EventArgs e)
+        {
+            if (loginPassword_txtb.Text == "")
+            {
+                password_lbl.Visible = true;
+            }
+        }
+        private void loginEmail_txtb_Enter(object sender, EventArgs e)
+        {
+            email_lbl.Visible = false;
+        }
+
+        private void loginEmail_txtb_Leave(object sender, EventArgs e)
+        {
+            if (loginEmail_txtb.Text == "")
+            {
+                email_lbl.Visible = true;
+            }
+        }
+        private void loginSecPassword_txtb_Enter(object sender, EventArgs e)
+        {
+            secPassword_lbl.Visible = false;
+        }
+
+        private void loginSecPassword_txtb_Leave(object sender, EventArgs e)
+        {
+            if (loginSecPassword_txtb.Text == "")
+            {
+                secPassword_lbl.Visible = true;
             }
         }
 
