@@ -12,7 +12,7 @@ namespace SecondProject_Auto.Forms
 {
     public partial class Login_Form : Form
     {
-        static public bool IsLoggedIn { get; private set; } = false;
+        //static public bool IsLoggedIn { get; private set; } = false;
         public Login_Form()
         {
             InitializeComponent();
@@ -37,7 +37,6 @@ namespace SecondProject_Auto.Forms
                 config.Save(ConfigurationSaveMode.Modified);
                 ConfigurationManager.RefreshSection("appSettings");
 
-                IsLoggedIn = true;
                 DialogResult = DialogResult.OK;
                 Close();
             }

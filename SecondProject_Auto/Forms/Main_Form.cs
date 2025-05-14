@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Linq;
 using System.Windows.Forms;
 using SecondProject_Auto.Forms;
@@ -26,7 +27,8 @@ namespace SecondProject_Auto
         }
         private void start_btn_Click(object sender, EventArgs e)
         {
-            if (Login_Form.IsLoggedIn)
+            Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+            if (bool.Parse(config.AppSettings.Settings["IsLoggedIn"].Value))
             {
                 var form = new MainWithLogin_Form();
 
@@ -41,7 +43,7 @@ namespace SecondProject_Auto
                 var logform = new Login_Form();
                 Visible = false;
                 logform.ShowDialog();
-                if(Login_Form.IsLoggedIn)
+                if((bool.Parse(config.AppSettings.Settings["IsLoggedIn"].Value)))
                 {
                     var form = new MainWithLogin_Form();
 
@@ -51,7 +53,7 @@ namespace SecondProject_Auto
                     form.Show();
                     Close();
                 }
-                if (!Login_Form.IsLoggedIn)
+                if (!(bool.Parse(config.AppSettings.Settings["IsLoggedIn"].Value)))
                 {
                     Visible = true;
                 }
