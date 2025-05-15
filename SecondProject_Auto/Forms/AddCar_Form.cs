@@ -1,5 +1,7 @@
 ﻿using SecondProject_Auto.Enums;
 using System;
+using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace SecondProject_Auto.Forms
@@ -66,8 +68,6 @@ namespace SecondProject_Auto.Forms
 
                 mfr = mfr_txt.Text;
 
-                photoFilePath = photo_txt.Text;
-
                 dateCreate = new DateTime(int.Parse(yearCreate_cmb.Text), 1, 1);
 
                 using (var context = new AutoContext())
@@ -97,6 +97,20 @@ namespace SecondProject_Auto.Forms
             //    {
             //        MessageBox.Show($"Ошибка при добавлении автомобиля:\n{ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             //    }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image files (*.jpg, *.jpeg, *.png)|*.jpg;*.jpeg;*.png|All files (*.*)|*.*";
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                photoFilePath = $@"..\..\Resources\{openFileDialog.SafeFileName}";
+                File.Copy(openFileDialog.FileName, photoFilePath);
+
+                pictureBox1.Image = Image.FromFile(openFileDialog.FileName);
+                pictureBox1.Update();
             }
         }
     }
+}

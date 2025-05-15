@@ -47,14 +47,15 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.photo_txt = new System.Windows.Forms.TextBox();
             this.add_btn = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.fuelType_cmb = new System.Windows.Forms.ComboBox();
             this.quality_cmb = new System.Windows.Forms.ComboBox();
             this.yearCreate_cmb = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // name_txt
@@ -210,25 +211,9 @@
             this.label10.TabIndex = 19;
             this.label10.Text = "Производитель";
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(396, 32);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(68, 13);
-            this.label11.TabIndex = 21;
-            this.label11.Text = "Путь к фото";
-            // 
-            // photo_txt
-            // 
-            this.photo_txt.Location = new System.Drawing.Point(399, 48);
-            this.photo_txt.Name = "photo_txt";
-            this.photo_txt.Size = new System.Drawing.Size(142, 20);
-            this.photo_txt.TabIndex = 20;
-            // 
             // add_btn
             // 
-            this.add_btn.Location = new System.Drawing.Point(399, 209);
+            this.add_btn.Location = new System.Drawing.Point(15, 321);
             this.add_btn.Name = "add_btn";
             this.add_btn.Size = new System.Drawing.Size(93, 35);
             this.add_btn.TabIndex = 22;
@@ -239,7 +224,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(396, 86);
+            this.label12.Location = new System.Drawing.Point(12, 264);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(54, 13);
             this.label12.TabIndex = 24;
@@ -263,7 +248,7 @@
             this.quality_cmb.Items.AddRange(new object[] {
             "Б/У",
             "С завода"});
-            this.quality_cmb.Location = new System.Drawing.Point(399, 102);
+            this.quality_cmb.Location = new System.Drawing.Point(12, 280);
             this.quality_cmb.Name = "quality_cmb";
             this.quality_cmb.Size = new System.Drawing.Size(142, 21);
             this.quality_cmb.TabIndex = 26;
@@ -271,7 +256,7 @@
             // yearCreate_cmb
             // 
             this.yearCreate_cmb.FormattingEnabled = true;
-            this.yearCreate_cmb.Location = new System.Drawing.Point(399, 150);
+            this.yearCreate_cmb.Location = new System.Drawing.Point(231, 280);
             this.yearCreate_cmb.Name = "yearCreate_cmb";
             this.yearCreate_cmb.Size = new System.Drawing.Size(142, 21);
             this.yearCreate_cmb.TabIndex = 27;
@@ -279,25 +264,43 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(396, 134);
+            this.label13.Location = new System.Drawing.Point(228, 264);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(99, 13);
             this.label13.TabIndex = 28;
             this.label13.Text = "Год производства";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(412, 32);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(359, 189);
+            this.pictureBox1.TabIndex = 29;
+            this.pictureBox1.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(412, 259);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 30;
+            this.button1.Text = "Выбрать фотографию";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // AddCar_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.yearCreate_cmb);
             this.Controls.Add(this.quality_cmb);
             this.Controls.Add(this.fuelType_cmb);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.add_btn);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.photo_txt);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -319,6 +322,7 @@
             this.Controls.Add(this.name_txt);
             this.Name = "AddCar_Form";
             this.Text = "AddCar_Form";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -345,13 +349,13 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox photo_txt;
         private System.Windows.Forms.Button add_btn;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox fuelType_cmb;
         private System.Windows.Forms.ComboBox quality_cmb;
         private System.Windows.Forms.ComboBox yearCreate_cmb;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button button1;
     }
 }
