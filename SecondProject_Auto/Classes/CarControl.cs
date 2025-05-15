@@ -6,62 +6,109 @@ namespace SecondProject_Auto.Forms
 {
     public partial class CarControl : UserControl
     {
-        private Label label1;
-        private Label label2;
-        private Button button1;
-        private PictureBox pictureBox1;
+        private Label labelName;
+        private Label labelPrice;
+        private Button buttonDescription;
+        private PictureBox pictureBoxCar;
 
         public int Id { get; set; }
-        public string Name { get; set; }
-        public decimal Price { get; set; }
+        public string Name
+        {
+            get => labelName.Text;
+            set => labelName.Text = value;
+        }
+
+        public decimal Price
+        {
+            get => decimal.Parse(labelPrice.Text.Replace("₽", "").Trim());
+            set => labelPrice.Text = $"₽{value:F0}";
+        }
+
         public string ImageUrl { get; set; }
         public string Description { get; set; }
 
+        // Событие для кнопки "Описание"
+        public event EventHandler DescriptionButtonClick;
+
         public CarControl()
         {
-            PictureBox carImage = new PictureBox
-            {
-                Name = "carImage",
-                Size = new Size(150, 100),
-                Margin = new Padding(10),
-                Dock = DockStyle.Top
-            };
-
-            Label nameLabel = new Label
-            {
-                Name = "nameLabel",
-                Text = "Название автомобиля",
-                Font = new Font("Arial", 10, FontStyle.Bold),
-                AutoSize = true,
-                Margin = new Padding(10)
-            };
-
-            Label priceLabel = new Label
-            {
-                Name = "priceLabel",
-                Text = "Цена",
-                Font = new Font("Arial", 8),
-                AutoSize = true,
-                Margin = new Padding(10)
-            };
-
-            Button descriptionButton = new Button
-            {
-                Name = "descriptionButton",
-                Text = "Описание",
-                Size = new Size(100, 30),
-                Margin = new Padding(10)
-            };
-
-            descriptionButton.Click += DescriptionButton_Click;
-
-            Controls.Add(carImage);
-            Controls.Add(nameLabel);
-            Controls.Add(priceLabel);
-            Controls.Add(descriptionButton);
+            InitializeComponent();
         }
 
-        public void UpdateData(int id, string name, decimal price, string imageUrl, string description)
+        private void InitializeComponent()
+        {
+            this.labelName = new System.Windows.Forms.Label();
+            this.labelPrice = new System.Windows.Forms.Label();
+            this.buttonDescription = new System.Windows.Forms.Button();
+            this.pictureBoxCar = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCar)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // labelName
+            // 
+            this.labelName.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelName.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.labelName.Location = new System.Drawing.Point(5, 155);
+            this.labelName.Name = "labelName";
+            this.labelName.Size = new System.Drawing.Size(254, 25);
+            this.labelName.TabIndex = 2;
+            this.labelName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelPrice
+            // 
+            this.labelPrice.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelPrice.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.labelPrice.ForeColor = System.Drawing.Color.Green;
+            this.labelPrice.Location = new System.Drawing.Point(5, 180);
+            this.labelPrice.Name = "labelPrice";
+            this.labelPrice.Size = new System.Drawing.Size(254, 20);
+            this.labelPrice.TabIndex = 1;
+            this.labelPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // buttonDescription
+            // 
+            this.buttonDescription.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.buttonDescription.Location = new System.Drawing.Point(5, 201);
+            this.buttonDescription.Name = "buttonDescription";
+            this.buttonDescription.Size = new System.Drawing.Size(254, 30);
+            this.buttonDescription.TabIndex = 0;
+            this.buttonDescription.Text = "Описание";
+            // 
+            // pictureBoxCar
+            // 
+            this.pictureBoxCar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxCar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pictureBoxCar.Location = new System.Drawing.Point(5, 5);
+            this.pictureBoxCar.Name = "pictureBoxCar";
+            this.pictureBoxCar.Size = new System.Drawing.Size(254, 150);
+            this.pictureBoxCar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxCar.TabIndex = 3;
+            this.pictureBoxCar.TabStop = false;
+            // 
+            // CarControl
+            // 
+            this.Controls.Add(this.buttonDescription);
+            this.Controls.Add(this.labelPrice);
+            this.Controls.Add(this.labelName);
+            this.Controls.Add(this.pictureBoxCar);
+            this.Margin = new System.Windows.Forms.Padding(5);
+            this.Name = "CarControl";
+            this.Padding = new System.Windows.Forms.Padding(5);
+            this.Size = new System.Drawing.Size(264, 236);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCar)).EndInit();
+            this.ResumeLayout(false);
+
+        }
+
+        private void DescriptionButton_Click(object sender, EventArgs e)
+        {
+            DescriptionButtonClick?.Invoke(this, e);
+        }
+
+        /// <summary>
+        /// Установка данных машины
+        /// </summary>
+        public void SetData(int id, string name, decimal price, string imageUrl, string description)
         {
             Id = id;
             Name = name;
@@ -69,80 +116,21 @@ namespace SecondProject_Auto.Forms
             ImageUrl = imageUrl;
             Description = description;
 
-            PictureBox carImage = Controls["carImage"] as PictureBox;
-            Label nameLabel = Controls["nameLabel"] as Label;
-            Label priceLabel = Controls["priceLabel"] as Label;
-
-            carImage.Image = Image.FromFile(imageUrl); 
-            nameLabel.Text = name;
-            priceLabel.Text = $"Цена: {price:C}";
-        }
-
-        private void DescriptionButton_Click(object sender, EventArgs e)
-        {
-            CarDescription_Form descriptionForm = new CarDescription_Form
+            try
             {
-                Text = Name
-            };
-            descriptionForm.ShowDialog();
-        }
-
-        private void InitializeComponent()
-        {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(201, 117);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(11, 123);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "label1";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(11, 149);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "label2";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(101, 144);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // CarControl
-            // 
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
-            this.Name = "CarControl";
-            this.Size = new System.Drawing.Size(207, 188);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+                if (!string.IsNullOrEmpty(imageUrl) && System.IO.File.Exists(imageUrl))
+                {
+                    pictureBoxCar.Image = Image.FromFile(imageUrl);
+                }
+                else
+                {
+                    pictureBoxCar.Image = Properties.Resources.placeholder; // Заглушка
+                }
+            }
+            catch
+            {
+                pictureBoxCar.Image = Properties.Resources.placeholder; // При ошибке тоже заглушка
+            }
         }
     }
 }
