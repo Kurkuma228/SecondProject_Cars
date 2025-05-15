@@ -1,18 +1,20 @@
 ﻿using System;
 using System.Configuration;
+using System.Runtime.Remoting.Contexts;
 using System.Windows.Forms;
 
 namespace SecondProject_Auto
 {
     public partial class Profile_Form : Form
     {
+        public event EventHandler UserDeleted;
         public Profile_Form()
         {
             InitializeComponent();
             using(var context = new UserContext())
             {
                 Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-                var user = context.Users.Find(config.AppSettings.Settings["UserId"].Value);
+                var user = context.Users.Find(Int32.Parse(config.AppSettings.Settings["UserId"].Value));
                 loginName_txtb.Text = user.Name;
                 loginEmail_txtb.Text = user.Email;
             }
@@ -25,7 +27,7 @@ namespace SecondProject_Auto
                 try
                 {
                     Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-                    var user = context.Users.Find(config.AppSettings.Settings["UserId"].Value);
+                    var user = context.Users.Find(Int32.Parse(config.AppSettings.Settings["UserId"].Value));
 
                     user.Name = loginName_txtb.Text;
                     user.Email = loginEmail_txtb.Text;
@@ -50,6 +52,18 @@ namespace SecondProject_Auto
                 loginPassword_txtb.UseSystemPasswordChar = true;
                 loginSecPassword_txtb.UseSystemPasswordChar = true;
             }
+        }
+
+        private void delete_btn_Click(object sender, EventArgs e)
+        {
+            using (var context = new UserContext())
+            {
+                Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+                var user = context.Users.Find(Int32.Parse(config.AppSettings.Settings["UserId"].Value));
+                context.Users.Remove(user);
+            }
+            UserDeleted?.Invoke(this, EventArgs.Empty);
+            Close();
         }
     }
 }

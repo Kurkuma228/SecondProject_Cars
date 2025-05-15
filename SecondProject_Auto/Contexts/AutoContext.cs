@@ -1,4 +1,5 @@
 ﻿using SecondProject_Auto.Enums;
+using System;
 using System.Data.Entity;
 
 
@@ -16,6 +17,7 @@ namespace SecondProject_Auto
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public DateTime YearCreate { get; set; }
         public string AutoType { get; set; }
         public QualityType QualityType { get; set; }
         public decimal Price { get; set; }

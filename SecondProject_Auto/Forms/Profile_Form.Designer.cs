@@ -198,6 +198,7 @@
             this.delete_btn.TabIndex = 18;
             this.delete_btn.Text = "Удалить профиль";
             this.delete_btn.UseVisualStyleBackColor = false;
+            this.delete_btn.Click += new System.EventHandler(this.delete_btn_Click);
             // 
             // checkBox1
             // 

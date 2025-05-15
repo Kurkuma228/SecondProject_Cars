@@ -40,7 +40,9 @@ namespace SecondProject_Auto.Forms
         private void profile_btn_Click(object sender, EventArgs e)
         {
             var form = new Profile_Form();
+            Visible = false;
             form.ShowDialog();
+            form.UserDeleted += OnUserDeleted;
         }
 
         private void exit_btn_Click(object sender, EventArgs e)
@@ -51,6 +53,17 @@ namespace SecondProject_Auto.Forms
             config.Save(ConfigurationSaveMode.Modified);
             ConfigurationManager.RefreshSection("appSettings");
 
+            var form = new Main_Form();
+
+            ApplicationContext context = (ApplicationContext)Application.OpenForms[0].Tag;
+            context.MainForm = form;
+            form.Tag = context;
+
+            form.Show();
+            Close();
+        }
+        private void OnUserDeleted(object sender, EventArgs e)
+        {
             var form = new Main_Form();
 
             ApplicationContext context = (ApplicationContext)Application.OpenForms[0].Tag;

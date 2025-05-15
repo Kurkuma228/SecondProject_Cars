@@ -7,6 +7,7 @@ namespace SecondProject_Auto.Forms
     {
         string name { get; set; }
         string autoType { get; set; }
+        DateTime dateCreate { get; set; }
         decimal price { get; set; }
         string color { get; set; }
         uint milage { get; set; }
@@ -17,10 +18,10 @@ namespace SecondProject_Auto.Forms
         string mfr { get; set; }
         string photoFilePath { get; set; }
 
+
         public AddCar_Form()
         {
             InitializeComponent();
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -47,7 +48,18 @@ namespace SecondProject_Auto.Forms
 
             photoFilePath = photo_txt.Text;
 
+            using (var context = new AutoContext())
+            {
+                var car = new Auto();
 
+                car.Name = name;
+                car.AutoType = autoType;
+                car.Price = price;
+                car.Color = color;
+                car.Milage = milage;
+                car.FuelType = 
+                context.Autos.Add(car);
+            }
         }
     }
 }

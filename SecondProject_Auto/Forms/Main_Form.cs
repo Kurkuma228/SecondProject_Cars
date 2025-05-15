@@ -43,7 +43,7 @@ namespace SecondProject_Auto
                 var logform = new Login_Form();
                 Visible = false;
                 logform.ShowDialog();
-                if((bool.Parse(config.AppSettings.Settings["IsLoggedIn"].Value)))
+                if(Login_Form.IsLoggedIn)
                 {
                     var form = new MainWithLogin_Form();
 
@@ -53,7 +53,7 @@ namespace SecondProject_Auto
                     form.Show();
                     Close();
                 }
-                if (!(bool.Parse(config.AppSettings.Settings["IsLoggedIn"].Value)))
+                else
                 {
                     Visible = true;
                 }
