@@ -11,7 +11,7 @@ namespace SecondProject_Auto.Forms
         DateTime dateCreate { get; set; }
         decimal price { get; set; }
         string color { get; set; }
-        uint milage { get; set; }
+        uint mileage { get; set; }
         QualityType quality { get; set; }
         FuelType fuelType { get; set; }
         string engine { get; set; }
@@ -24,64 +24,79 @@ namespace SecondProject_Auto.Forms
         public AddCar_Form()
         {
             InitializeComponent();
+
+            for (int year = DateTime.Now.Year;year >= 1900;  year--)
+            {
+                yearCreate_cmb.Items.Add(year);
+            }
+            yearCreate_cmb.SelectedItem = DateTime.Now.Year;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            name = name_txt.Text;
+            //try
+            //{
+                name = name_txt.Text;
 
-            autoType = autoType_txt.Text;
+                autoType = autoType_txt.Text;
 
-            price = decimal.Parse(price_txt.Text);
+                price = decimal.Parse(price_txt.Text);
 
-            color = color_txt.Text;
+                color = color_txt.Text;
 
-            milage = uint.Parse(mileage_txt.Text);
+                mileage = uint.Parse(mileage_txt.Text);
 
-            fuelType = (FuelType)Enum.Parse(typeof(FuelType), fuelType_cmb.Text);
+                fuelType = (FuelType)Enum.Parse(typeof(FuelType), fuelType_cmb.Text);
 
-            switch(quality_cmb.Text)
-            {
-                case "Б/У":
-                    quality = QualityType.Б_У;
-                    break;
-                case "Новая":
-                    quality = QualityType.Новая;
-                    break;
-            }
+                switch (quality_cmb.Text)
+                {
+                    case "Б/У":
+                        quality = QualityType.Б_У;
+                        break;
+                    case "Новая":
+                        quality = QualityType.Новая;
+                        break;
+                }
 
-            engine = engine_txt.Text;
+                engine = engine_txt.Text;
 
-            horsePower = uint.Parse(horsepower_txt.Text);
+                horsePower = uint.Parse(horsepower_txt.Text);
 
-            seatingCapacity = byte.Parse(seat_txt.Text);
+                seatingCapacity = byte.Parse(seat_txt.Text);
 
-            mfr = mfr_txt.Text;
+                mfr = mfr_txt.Text;
 
-            photoFilePath = photo_txt.Text;
+                photoFilePath = photo_txt.Text;
 
-            dateCreate = DateTime.Parse(yearCreate_dtp.Text);
+                dateCreate = new DateTime(int.Parse(yearCreate_cmb.Text), 1, 1);
 
-            using (var context = new AutoContext())
-            {
-                var car = new Auto();
+                using (var context = new AutoContext())
+                {
+                    var car = new Auto();
 
-                car.Name = name;
-                car.AutoType = autoType;
-                car.Price = price;
-                car.Color = color;
-                car.Milage = milage;
-                car.FuelType = fuelType;
-                car.QualityType = quality;
-                car.Engine = engine;
-                car.HorsePower = horsePower;
-                car.SeatingCapacity = seatingCapacity;
-                car.Mfr = mfr;
-                car.PhotoFilePath = photoFilePath;
-                car.YearCreate = dateCreate;
+                    car.Name = name;
+                    car.AutoType = autoType;
+                    car.Price = price;
+                    car.Color = color;
+                    car.Mileage = mileage;
+                    car.FuelType = fuelType;
+                    car.QualityType = quality;
+                    car.Engine = engine;
+                    car.HorsePower = horsePower;
+                    car.SeatingCapacity = seatingCapacity;
+                    car.Mfr = mfr;
+                    car.PhotoFilePath = photoFilePath;
+                    car.YearCreate = dateCreate;
 
-                context.Autos.Add(car);
+                    context.Autos.Add(car);
+                    context.SaveChanges();
+                }
+                MessageBox.Show("Машина успешно добавлена!");
+            //}
+            //    catch (Exception ex)
+            //    {
+            //        MessageBox.Show($"Ошибка при добавлении автомобиля:\n{ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    }
             }
         }
     }
-}

@@ -16,12 +16,13 @@ namespace SecondProject_Auto.Forms
         public MainWithLogin_Form()
         {
             InitializeComponent();
+
             Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
             if (config.AppSettings.Settings["UserId"].Value == "2")
             {
                 button1.Visible = true;
             }
-                using (var context = new AutoContext())
+            using (var context = new AutoContext())
             {
                 var cars = context.Autos.ToList();
                 foreach (var car in cars)
@@ -80,6 +81,21 @@ namespace SecondProject_Auto.Forms
             {
                 form.ShowDialog();
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedIndex = 0;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedIndex = 1;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedIndex = 2;
         }
     }
 }

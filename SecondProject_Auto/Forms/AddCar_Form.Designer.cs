@@ -53,7 +53,8 @@
             this.label12 = new System.Windows.Forms.Label();
             this.fuelType_cmb = new System.Windows.Forms.ComboBox();
             this.quality_cmb = new System.Windows.Forms.ComboBox();
-            this.yearCreate_dtp = new System.Windows.Forms.DateTimePicker();
+            this.yearCreate_cmb = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // name_txt
@@ -267,19 +268,30 @@
             this.quality_cmb.Size = new System.Drawing.Size(142, 21);
             this.quality_cmb.TabIndex = 26;
             // 
-            // yearCreate_dtp
+            // yearCreate_cmb
             // 
-            this.yearCreate_dtp.Location = new System.Drawing.Point(399, 168);
-            this.yearCreate_dtp.Name = "yearCreate_dtp";
-            this.yearCreate_dtp.Size = new System.Drawing.Size(200, 20);
-            this.yearCreate_dtp.TabIndex = 27;
+            this.yearCreate_cmb.FormattingEnabled = true;
+            this.yearCreate_cmb.Location = new System.Drawing.Point(399, 150);
+            this.yearCreate_cmb.Name = "yearCreate_cmb";
+            this.yearCreate_cmb.Size = new System.Drawing.Size(142, 21);
+            this.yearCreate_cmb.TabIndex = 27;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(396, 134);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(99, 13);
+            this.label13.TabIndex = 28;
+            this.label13.Text = "Год производства";
             // 
             // AddCar_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.yearCreate_dtp);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.yearCreate_cmb);
             this.Controls.Add(this.quality_cmb);
             this.Controls.Add(this.fuelType_cmb);
             this.Controls.Add(this.label12);
@@ -339,6 +351,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox fuelType_cmb;
         private System.Windows.Forms.ComboBox quality_cmb;
-        private System.Windows.Forms.DateTimePicker yearCreate_dtp;
+        private System.Windows.Forms.ComboBox yearCreate_cmb;
+        private System.Windows.Forms.Label label13;
     }
 }

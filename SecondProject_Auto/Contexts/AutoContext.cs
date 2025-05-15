@@ -22,7 +22,7 @@ namespace SecondProject_Auto
         public QualityType QualityType { get; set; }
         public decimal Price { get; set; }
         public string Color { get; set; }
-        public uint Milage { get; set; }
+        public uint Mileage { get; set; }
         public FuelType FuelType { get; set; }
         public string Engine { get; set; }
         public uint HorsePower { get; set; }
