@@ -28,7 +28,7 @@ namespace SecondProject_Auto
             }
             else
             {
-                Main_Form mainForm = new Main_Form();
+                Start_Form mainForm = new Start_Form();
                 ApplicationContext appContext = new ApplicationContext(mainForm);
                 mainForm.Tag = appContext;
 

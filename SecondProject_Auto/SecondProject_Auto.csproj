@@ -82,11 +82,11 @@
     <Compile Include="Forms\Login_Form.Designer.cs">
       <DependentUpon>Login_Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Main_Form.cs">
+    <Compile Include="Forms\Start_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Main_Form.Designer.cs">
-      <DependentUpon>Main_Form.cs</DependentUpon>
+    <Compile Include="Forms\Start_Form.Designer.cs">
+      <DependentUpon>Start_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\MainWithLogin_Form.cs">
       <SubType>Form</SubType>
@@ -118,8 +118,8 @@
     <EmbeddedResource Include="Forms\Login_Form.resx">
       <DependentUpon>Login_Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Main_Form.resx">
-      <DependentUpon>Main_Form.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Start_Form.resx">
+      <DependentUpon>Start_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainWithLogin_Form.resx">
       <DependentUpon>MainWithLogin_Form.cs</DependentUpon>

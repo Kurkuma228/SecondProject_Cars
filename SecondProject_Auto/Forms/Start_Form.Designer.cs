@@ -1,6 +1,6 @@
 ﻿namespace SecondProject_Auto
 {
-    partial class Main_Form
+    partial class Start_Form
     {
         /// <summary>
         /// Обязательная переменная конструктора.

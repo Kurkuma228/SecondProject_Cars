@@ -2,7 +2,7 @@
 {
     public enum QualityType
     {
-        Used,
-        New
+        Б_У,
+        Новая
     }
 }

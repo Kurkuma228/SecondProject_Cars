@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SecondProject_Auto.Enums;
+using System;
 using System.Windows.Forms;
 
 namespace SecondProject_Auto.Forms
@@ -11,7 +12,8 @@ namespace SecondProject_Auto.Forms
         decimal price { get; set; }
         string color { get; set; }
         uint milage { get; set; }
-        string fuelType { get; set; }
+        QualityType quality { get; set; }
+        FuelType fuelType { get; set; }
         string engine { get; set; }
         uint horsePower { get; set; }
         byte seatingCapacity { get; set; }
@@ -36,7 +38,17 @@ namespace SecondProject_Auto.Forms
 
             milage = uint.Parse(mileage_txt.Text);
 
-            fuelType = typeGas_txt.Text;
+            fuelType = (FuelType)Enum.Parse(typeof(FuelType), fuelType_cmb.Text);
+
+            switch(quality_cmb.Text)
+            {
+                case "Б/У":
+                    quality = QualityType.Б_У;
+                    break;
+                case "Новая":
+                    quality = QualityType.Новая;
+                    break;
+            }
 
             engine = engine_txt.Text;
 
@@ -48,6 +60,8 @@ namespace SecondProject_Auto.Forms
 
             photoFilePath = photo_txt.Text;
 
+            dateCreate = DateTime.Parse(yearCreate_dtp.Text);
+
             using (var context = new AutoContext())
             {
                 var car = new Auto();
@@ -57,7 +71,15 @@ namespace SecondProject_Auto.Forms
                 car.Price = price;
                 car.Color = color;
                 car.Milage = milage;
-                car.FuelType = 
+                car.FuelType = fuelType;
+                car.QualityType = quality;
+                car.Engine = engine;
+                car.HorsePower = horsePower;
+                car.SeatingCapacity = seatingCapacity;
+                car.Mfr = mfr;
+                car.PhotoFilePath = photoFilePath;
+                car.YearCreate = dateCreate;
+
                 context.Autos.Add(car);
             }
         }

@@ -53,7 +53,7 @@ namespace SecondProject_Auto.Forms
             config.Save(ConfigurationSaveMode.Modified);
             ConfigurationManager.RefreshSection("appSettings");
 
-            var form = new Main_Form();
+            var form = new Start_Form();
 
             ApplicationContext context = (ApplicationContext)Application.OpenForms[0].Tag;
             context.MainForm = form;
@@ -64,7 +64,7 @@ namespace SecondProject_Auto.Forms
         }
         private void OnUserDeleted(object sender, EventArgs e)
         {
-            var form = new Main_Form();
+            var form = new Start_Form();
 
             ApplicationContext context = (ApplicationContext)Application.OpenForms[0].Tag;
             context.MainForm = form;
@@ -72,6 +72,14 @@ namespace SecondProject_Auto.Forms
 
             form.Show();
             Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            using(var form = new AddCar_Form())
+            {
+                form.ShowDialog();
+            }
         }
     }
 }

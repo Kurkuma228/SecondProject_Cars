@@ -6,9 +6,9 @@ using SecondProject_Auto.Forms;
 
 namespace SecondProject_Auto
 {
-    public partial class Main_Form : Form
+    public partial class Start_Form : Form
     {
-        public Main_Form()
+        public Start_Form()
         {
             InitializeComponent();
             LoadData();

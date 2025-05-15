@@ -31,7 +31,6 @@
             this.name_txt = new System.Windows.Forms.TextBox();
             this.autoType_txt = new System.Windows.Forms.TextBox();
             this.price_txt = new System.Windows.Forms.TextBox();
-            this.typeGas_txt = new System.Windows.Forms.TextBox();
             this.engine_txt = new System.Windows.Forms.TextBox();
             this.horsepower_txt = new System.Windows.Forms.TextBox();
             this.color_txt = new System.Windows.Forms.TextBox();
@@ -50,7 +49,11 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.photo_txt = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.add_btn = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.fuelType_cmb = new System.Windows.Forms.ComboBox();
+            this.quality_cmb = new System.Windows.Forms.ComboBox();
+            this.yearCreate_dtp = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // name_txt
@@ -73,13 +76,6 @@
             this.price_txt.Name = "price_txt";
             this.price_txt.Size = new System.Drawing.Size(142, 20);
             this.price_txt.TabIndex = 2;
-            // 
-            // typeGas_txt
-            // 
-            this.typeGas_txt.Location = new System.Drawing.Point(12, 169);
-            this.typeGas_txt.Name = "typeGas_txt";
-            this.typeGas_txt.Size = new System.Drawing.Size(142, 20);
-            this.typeGas_txt.TabIndex = 3;
             // 
             // engine_txt
             // 
@@ -229,22 +225,65 @@
             this.photo_txt.Size = new System.Drawing.Size(142, 20);
             this.photo_txt.TabIndex = 20;
             // 
-            // button1
+            // add_btn
             // 
-            this.button1.Location = new System.Drawing.Point(399, 209);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(93, 35);
-            this.button1.TabIndex = 22;
-            this.button1.Text = "Добавить в бд";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.add_btn.Location = new System.Drawing.Point(399, 209);
+            this.add_btn.Name = "add_btn";
+            this.add_btn.Size = new System.Drawing.Size(93, 35);
+            this.add_btn.TabIndex = 22;
+            this.add_btn.Text = "Добавить в бд";
+            this.add_btn.UseVisualStyleBackColor = true;
+            this.add_btn.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(396, 86);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(54, 13);
+            this.label12.TabIndex = 24;
+            this.label12.Text = "Качество";
+            // 
+            // fuelType_cmb
+            // 
+            this.fuelType_cmb.FormattingEnabled = true;
+            this.fuelType_cmb.Items.AddRange(new object[] {
+            "Электричество",
+            "Дизель",
+            "Бензин"});
+            this.fuelType_cmb.Location = new System.Drawing.Point(12, 168);
+            this.fuelType_cmb.Name = "fuelType_cmb";
+            this.fuelType_cmb.Size = new System.Drawing.Size(142, 21);
+            this.fuelType_cmb.TabIndex = 25;
+            // 
+            // quality_cmb
+            // 
+            this.quality_cmb.FormattingEnabled = true;
+            this.quality_cmb.Items.AddRange(new object[] {
+            "Б/У",
+            "С завода"});
+            this.quality_cmb.Location = new System.Drawing.Point(399, 102);
+            this.quality_cmb.Name = "quality_cmb";
+            this.quality_cmb.Size = new System.Drawing.Size(142, 21);
+            this.quality_cmb.TabIndex = 26;
+            // 
+            // yearCreate_dtp
+            // 
+            this.yearCreate_dtp.Location = new System.Drawing.Point(399, 168);
+            this.yearCreate_dtp.Name = "yearCreate_dtp";
+            this.yearCreate_dtp.Size = new System.Drawing.Size(200, 20);
+            this.yearCreate_dtp.TabIndex = 27;
             // 
             // AddCar_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.yearCreate_dtp);
+            this.Controls.Add(this.quality_cmb);
+            this.Controls.Add(this.fuelType_cmb);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.add_btn);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.photo_txt);
             this.Controls.Add(this.label10);
@@ -263,7 +302,6 @@
             this.Controls.Add(this.color_txt);
             this.Controls.Add(this.horsepower_txt);
             this.Controls.Add(this.engine_txt);
-            this.Controls.Add(this.typeGas_txt);
             this.Controls.Add(this.price_txt);
             this.Controls.Add(this.autoType_txt);
             this.Controls.Add(this.name_txt);
@@ -279,7 +317,6 @@
         private System.Windows.Forms.TextBox name_txt;
         private System.Windows.Forms.TextBox autoType_txt;
         private System.Windows.Forms.TextBox price_txt;
-        private System.Windows.Forms.TextBox typeGas_txt;
         private System.Windows.Forms.TextBox engine_txt;
         private System.Windows.Forms.TextBox horsepower_txt;
         private System.Windows.Forms.TextBox color_txt;
@@ -298,6 +335,10 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox photo_txt;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button add_btn;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ComboBox fuelType_cmb;
+        private System.Windows.Forms.ComboBox quality_cmb;
+        private System.Windows.Forms.DateTimePicker yearCreate_dtp;
     }
 }
