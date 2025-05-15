@@ -42,7 +42,6 @@
             this.secPassword_lbl = new System.Windows.Forms.Label();
             this.photo_pbox = new System.Windows.Forms.PictureBox();
             this.login_btn = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.white_pbox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.back_pbox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.photo_pbox)).BeginInit();
@@ -208,23 +207,11 @@
             this.login_btn.UseVisualStyleBackColor = false;
             this.login_btn.Click += new System.EventHandler(this.login_btn_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(458, 185);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 13);
-            this.label1.TabIndex = 23;
-            this.label1.Text = "Слива";
-            // 
             // Registration_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(948, 562);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.login_btn);
             this.Controls.Add(this.photo_pbox);
             this.Controls.Add(this.secPassword_lbl);
@@ -267,6 +254,5 @@
         private System.Windows.Forms.Label secPassword_lbl;
         private System.Windows.Forms.PictureBox photo_pbox;
         private System.Windows.Forms.Button login_btn;
-        private System.Windows.Forms.Label label1;
     }
 }

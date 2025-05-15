@@ -6,17 +6,14 @@ namespace SecondProject_Auto.Forms
 {
     public partial class CarControl : UserControl
     {
-        // Свойства для хранения данных автомобиля
         public int Id { get; set; }
         public string Name { get; set; }
         public decimal Price { get; set; }
         public string ImageUrl { get; set; }
         public string Description { get; set; }
 
-        // Конструктор
         public CarControl()
         {
-            // Создаем элементы управления
             PictureBox carImage = new PictureBox
             {
                 Name = "carImage",
@@ -51,17 +48,14 @@ namespace SecondProject_Auto.Forms
                 Margin = new Padding(10)
             };
 
-            // Добавляем обработчик события для кнопки "Описание"
             descriptionButton.Click += DescriptionButton_Click;
 
-            // Добавляем элементы на UserControl
             Controls.Add(carImage);
             Controls.Add(nameLabel);
             Controls.Add(priceLabel);
             Controls.Add(descriptionButton);
         }
 
-        // Метод для обновления данных
         public void UpdateData(int id, string name, decimal price, string imageUrl, string description)
         {
             Id = id;
@@ -70,20 +64,17 @@ namespace SecondProject_Auto.Forms
             ImageUrl = imageUrl;
             Description = description;
 
-            // Обновляем элементы управления
             PictureBox carImage = Controls["carImage"] as PictureBox;
             Label nameLabel = Controls["nameLabel"] as Label;
             Label priceLabel = Controls["priceLabel"] as Label;
 
-            carImage.Image = Image.FromFile(imageUrl); // Загружаем изображение
+            carImage.Image = Image.FromFile(imageUrl); 
             nameLabel.Text = name;
             priceLabel.Text = $"Цена: {price:C}";
         }
 
-        // Обработчик события для кнопки "Описание"
         private void DescriptionButton_Click(object sender, EventArgs e)
         {
-            // Открываем форму с описанием автомобиля
             CarDescription_Form descriptionForm = new CarDescription_Form
             {
                 Text = Name

@@ -39,7 +39,7 @@ namespace SecondProject_Auto.Forms
 
         private void profile_btn_Click(object sender, EventArgs e)
         {
-            var form = new Login_Form();
+            var form = new Profile_Form();
             form.ShowDialog();
         }
 

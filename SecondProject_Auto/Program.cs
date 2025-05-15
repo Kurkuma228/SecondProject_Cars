@@ -15,16 +15,12 @@ namespace SecondProject_Auto
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new MainWithLogin_Form());
+            Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
             bool IsLoggedIn = bool.Parse(ConfigurationManager.AppSettings["IsLoggedIn"]);
 
             if (IsLoggedIn)
             {
-                MainWithLogin_Form mainForm = new MainWithLogin_Form();
-                ApplicationContext appContext = new ApplicationContext(mainForm);
-                mainForm.Tag = appContext;
-
-                Application.Run(appContext);
+                Application.Run(new MainWithLogin_Form());
             }
             else
             {

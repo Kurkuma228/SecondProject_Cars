@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using SecondProject_Auto.Enums;
 using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace SecondProject_Auto
 {
@@ -20,11 +17,13 @@ namespace SecondProject_Auto
         public int Id { get; set; }
         public string Name { get; set; }
         public string AutoType { get; set; }
+        public QualityType QualityType { get; set; }
         public decimal Price { get; set; }
-        public string FuelType { get; set; }
+        public string Color { get; set; }
+        public uint Milage { get; set; }
+        public FuelType FuelType { get; set; }
         public string Engine { get; set; }
         public uint HorsePower { get; set; }
-        public uint Torque { get; set; }
         public byte SeatingCapacity { get; set; }
         public string Mfr { get; set; }
         public string PhotoFilePath { get; set; }

@@ -38,6 +38,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.white_pbox = new System.Windows.Forms.PictureBox();
             this.back_pbox = new System.Windows.Forms.PictureBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.white_pbox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.back_pbox)).BeginInit();
@@ -71,6 +72,7 @@
             this.loginPassword_txtb.Location = new System.Drawing.Point(367, 271);
             this.loginPassword_txtb.Multiline = true;
             this.loginPassword_txtb.Name = "loginPassword_txtb";
+            this.loginPassword_txtb.PasswordChar = '*';
             this.loginPassword_txtb.Size = new System.Drawing.Size(227, 34);
             this.loginPassword_txtb.TabIndex = 6;
             this.loginPassword_txtb.Enter += new System.EventHandler(this.loginPassword_txtb_Enter);
@@ -83,7 +85,7 @@
             this.login_btn.FlatAppearance.BorderSize = 0;
             this.login_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.login_btn.ForeColor = System.Drawing.Color.White;
-            this.login_btn.Location = new System.Drawing.Point(367, 330);
+            this.login_btn.Location = new System.Drawing.Point(367, 334);
             this.login_btn.Name = "login_btn";
             this.login_btn.Size = new System.Drawing.Size(227, 28);
             this.login_btn.TabIndex = 7;
@@ -96,7 +98,7 @@
             this.register_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(234)))), ((int)(((byte)(207)))));
             this.register_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.register_btn.ForeColor = System.Drawing.Color.White;
-            this.register_btn.Location = new System.Drawing.Point(367, 364);
+            this.register_btn.Location = new System.Drawing.Point(367, 368);
             this.register_btn.Name = "register_btn";
             this.register_btn.Size = new System.Drawing.Size(227, 28);
             this.register_btn.TabIndex = 8;
@@ -155,11 +157,24 @@
             this.back_pbox.TabIndex = 10;
             this.back_pbox.TabStop = false;
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.BackColor = System.Drawing.Color.White;
+            this.checkBox1.Location = new System.Drawing.Point(367, 311);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(114, 17);
+            this.checkBox1.TabIndex = 15;
+            this.checkBox1.Text = "Показать пароль";
+            this.checkBox1.UseVisualStyleBackColor = false;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // Login_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(948, 562);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.passwrod_lbl);
             this.Controls.Add(this.register_btn);
@@ -194,5 +209,6 @@
         private System.Windows.Forms.Label loginAndEmail_lbl;
         private System.Windows.Forms.Label passwrod_lbl;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

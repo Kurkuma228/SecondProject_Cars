@@ -63,6 +63,7 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Contexts\AutoContext.cs" />
+    <Compile Include="Enums\FuelType.cs" />
     <Compile Include="Forms\AddCar_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +140,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Enums\QualityType.cs" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

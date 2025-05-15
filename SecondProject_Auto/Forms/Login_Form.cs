@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Configuration;
 using System.Data.SqlClient;
-using System.Drawing;
 using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 
 namespace SecondProject_Auto.Forms
@@ -16,8 +14,6 @@ namespace SecondProject_Auto.Forms
         public Login_Form()
         {
             InitializeComponent();
-
-            
         }
 
         private void login_btn_Click(object sender, EventArgs e)
@@ -137,6 +133,18 @@ namespace SecondProject_Auto.Forms
             if (loginPassword_txtb.Text == "")
             {
                 passwrod_lbl.Visible = true;
+            }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!checkBox1.Checked)
+            {
+                loginPassword_txtb.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                loginPassword_txtb.UseSystemPasswordChar = true;
             }
         }
     }

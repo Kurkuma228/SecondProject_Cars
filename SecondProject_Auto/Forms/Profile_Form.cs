@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Configuration;
 using System.Windows.Forms;
 
 namespace SecondProject_Auto
@@ -15,6 +9,47 @@ namespace SecondProject_Auto
         public Profile_Form()
         {
             InitializeComponent();
+            using(var context = new UserContext())
+            {
+                Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+                var user = context.Users.Find(config.AppSettings.Settings["UserId"].Value);
+                loginName_txtb.Text = user.Name;
+                loginEmail_txtb.Text = user.Email;
+            }
+        }
+
+        private void save_btn_Click(object sender, EventArgs e)
+        {
+            using (var context = new UserContext())
+            {
+                try
+                {
+                    Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+                    var user = context.Users.Find(config.AppSettings.Settings["UserId"].Value);
+
+                    user.Name = loginName_txtb.Text;
+                    user.Email = loginEmail_txtb.Text;
+                    user.Password = loginPassword_txtb.Text;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ошибка при регистрации: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!checkBox1.Checked)
+            {
+                loginPassword_txtb.UseSystemPasswordChar = false;
+                loginSecPassword_txtb.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                loginPassword_txtb.UseSystemPasswordChar = true;
+                loginSecPassword_txtb.UseSystemPasswordChar = true;
+            }
         }
     }
 }
