@@ -246,9 +246,9 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox loginName_txtb;
+        public System.Windows.Forms.TextBox loginName_txtb;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox loginEmail_txtb;
+        public System.Windows.Forms.TextBox loginEmail_txtb;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox loginPassword_txtb;
         private System.Windows.Forms.Label label4;

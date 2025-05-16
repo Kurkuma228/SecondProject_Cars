@@ -66,7 +66,7 @@ namespace SecondProject_Auto
             form.ShowDialog();
         }
 
-        private void register_btn_Click(object sender, EventArgs e)
+        public void register_btn_Click(object sender, EventArgs e)
         {
             var form = new Registration_Form();
             form.ShowDialog();

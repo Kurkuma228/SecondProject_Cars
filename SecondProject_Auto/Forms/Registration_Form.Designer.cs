@@ -240,19 +240,19 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox loginPassword_txtb;
-        private System.Windows.Forms.TextBox loginEmail_txtb;
-        private System.Windows.Forms.Label name_lbl;
-        private System.Windows.Forms.TextBox loginName_txtb;
-        private System.Windows.Forms.Button register_btn;
-        private System.Windows.Forms.Label register_lbl;
-        private System.Windows.Forms.PictureBox white_pbox;
-        private System.Windows.Forms.PictureBox back_pbox;
-        private System.Windows.Forms.Label email_lbl;
-        private System.Windows.Forms.Label password_lbl;
-        private System.Windows.Forms.TextBox loginSecPassword_txtb;
-        private System.Windows.Forms.Label secPassword_lbl;
-        private System.Windows.Forms.PictureBox photo_pbox;
-        private System.Windows.Forms.Button login_btn;
+        public System.Windows.Forms.TextBox loginPassword_txtb;
+        public System.Windows.Forms.TextBox loginEmail_txtb;
+        public System.Windows.Forms.Label name_lbl;
+        public System.Windows.Forms.TextBox loginName_txtb;
+        public System.Windows.Forms.Button register_btn;
+        public System.Windows.Forms.Label register_lbl;
+        public System.Windows.Forms.PictureBox white_pbox;
+        public System.Windows.Forms.PictureBox back_pbox;
+        public System.Windows.Forms.Label email_lbl;
+        public System.Windows.Forms.Label password_lbl;
+        public System.Windows.Forms.TextBox loginSecPassword_txtb;
+        public System.Windows.Forms.Label secPassword_lbl;
+        public System.Windows.Forms.PictureBox photo_pbox;
+        public System.Windows.Forms.Button login_btn;
     }
 }

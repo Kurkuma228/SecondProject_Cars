@@ -199,7 +199,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox loginNameEmail_txtb;
+        public System.Windows.Forms.TextBox loginNameEmail_txtb;
         private System.Windows.Forms.Label login_lbl;
         private System.Windows.Forms.TextBox loginPassword_txtb;
         private System.Windows.Forms.Button login_btn;
