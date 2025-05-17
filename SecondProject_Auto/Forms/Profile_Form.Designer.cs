@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.loginName_txtb = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.name_lbl = new System.Windows.Forms.Label();
             this.loginEmail_txtb = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.email_lbl = new System.Windows.Forms.Label();
             this.loginPassword_txtb = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.password_lbl = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.save_btn = new System.Windows.Forms.Button();
             this.loginSecPassword_txtb = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.passwordSec_lbl = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.delete_btn = new System.Windows.Forms.Button();
@@ -56,18 +56,20 @@
             this.loginName_txtb.Name = "loginName_txtb";
             this.loginName_txtb.Size = new System.Drawing.Size(227, 34);
             this.loginName_txtb.TabIndex = 1;
+            this.loginName_txtb.Enter += new System.EventHandler(this.loginName_txtb_Enter);
+            this.loginName_txtb.Leave += new System.EventHandler(this.loginName_txtb_Leave);
             // 
-            // label2
+            // name_lbl
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.label2.ForeColor = System.Drawing.Color.Gray;
-            this.label2.Location = new System.Drawing.Point(377, 239);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 17);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Имя";
+            this.name_lbl.AutoSize = true;
+            this.name_lbl.BackColor = System.Drawing.Color.White;
+            this.name_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.name_lbl.ForeColor = System.Drawing.Color.Gray;
+            this.name_lbl.Location = new System.Drawing.Point(377, 239);
+            this.name_lbl.Name = "name_lbl";
+            this.name_lbl.Size = new System.Drawing.Size(35, 17);
+            this.name_lbl.TabIndex = 3;
+            this.name_lbl.Text = "Имя";
             // 
             // loginEmail_txtb
             // 
@@ -77,18 +79,20 @@
             this.loginEmail_txtb.Name = "loginEmail_txtb";
             this.loginEmail_txtb.Size = new System.Drawing.Size(227, 34);
             this.loginEmail_txtb.TabIndex = 4;
+            this.loginEmail_txtb.Enter += new System.EventHandler(this.loginEmail_txtb_Enter);
+            this.loginEmail_txtb.Leave += new System.EventHandler(this.loginEmail_txtb_Leave);
             // 
-            // label3
+            // email_lbl
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.White;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.label3.ForeColor = System.Drawing.Color.Gray;
-            this.label3.Location = new System.Drawing.Point(377, 279);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 17);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Почта";
+            this.email_lbl.AutoSize = true;
+            this.email_lbl.BackColor = System.Drawing.Color.White;
+            this.email_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.email_lbl.ForeColor = System.Drawing.Color.Gray;
+            this.email_lbl.Location = new System.Drawing.Point(377, 279);
+            this.email_lbl.Name = "email_lbl";
+            this.email_lbl.Size = new System.Drawing.Size(49, 17);
+            this.email_lbl.TabIndex = 5;
+            this.email_lbl.Text = "Почта";
             // 
             // loginPassword_txtb
             // 
@@ -99,18 +103,20 @@
             this.loginPassword_txtb.PasswordChar = '*';
             this.loginPassword_txtb.Size = new System.Drawing.Size(227, 34);
             this.loginPassword_txtb.TabIndex = 7;
+            this.loginPassword_txtb.Enter += new System.EventHandler(this.loginPassword_txtb_Enter);
+            this.loginPassword_txtb.Leave += new System.EventHandler(this.loginPassword_txtb_Leave);
             // 
-            // label4
+            // password_lbl
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.White;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.label4.ForeColor = System.Drawing.Color.Gray;
-            this.label4.Location = new System.Drawing.Point(377, 319);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 17);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Пароль";
+            this.password_lbl.AutoSize = true;
+            this.password_lbl.BackColor = System.Drawing.Color.White;
+            this.password_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.password_lbl.ForeColor = System.Drawing.Color.Gray;
+            this.password_lbl.Location = new System.Drawing.Point(377, 319);
+            this.password_lbl.Name = "password_lbl";
+            this.password_lbl.Size = new System.Drawing.Size(57, 17);
+            this.password_lbl.TabIndex = 8;
+            this.password_lbl.Text = "Пароль";
             // 
             // pictureBox1
             // 
@@ -153,18 +159,20 @@
             this.loginSecPassword_txtb.PasswordChar = '*';
             this.loginSecPassword_txtb.Size = new System.Drawing.Size(227, 34);
             this.loginSecPassword_txtb.TabIndex = 14;
+            this.loginSecPassword_txtb.Enter += new System.EventHandler(this.loginSecPassword_txtb_Enter);
+            this.loginSecPassword_txtb.Leave += new System.EventHandler(this.loginSecPassword_txtb_Leave);
             // 
-            // label1
+            // passwordSec_lbl
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.label1.ForeColor = System.Drawing.Color.Gray;
-            this.label1.Location = new System.Drawing.Point(377, 359);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 17);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "Пароль";
+            this.passwordSec_lbl.AutoSize = true;
+            this.passwordSec_lbl.BackColor = System.Drawing.Color.White;
+            this.passwordSec_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.passwordSec_lbl.ForeColor = System.Drawing.Color.Gray;
+            this.passwordSec_lbl.Location = new System.Drawing.Point(377, 359);
+            this.passwordSec_lbl.Name = "passwordSec_lbl";
+            this.passwordSec_lbl.Size = new System.Drawing.Size(57, 17);
+            this.passwordSec_lbl.TabIndex = 15;
+            this.passwordSec_lbl.Text = "Пароль";
             // 
             // label5
             // 
@@ -221,14 +229,14 @@
             this.Controls.Add(this.delete_btn);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.passwordSec_lbl);
             this.Controls.Add(this.loginSecPassword_txtb);
             this.Controls.Add(this.save_btn);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.password_lbl);
             this.Controls.Add(this.loginPassword_txtb);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.email_lbl);
             this.Controls.Add(this.loginEmail_txtb);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.name_lbl);
             this.Controls.Add(this.loginName_txtb);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox2);
@@ -247,16 +255,16 @@
         #endregion
 
         private System.Windows.Forms.TextBox loginName_txtb;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label name_lbl;
         private System.Windows.Forms.TextBox loginEmail_txtb;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label email_lbl;
         private System.Windows.Forms.TextBox loginPassword_txtb;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label password_lbl;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button save_btn;
         private System.Windows.Forms.TextBox loginSecPassword_txtb;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label passwordSec_lbl;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Button delete_btn;

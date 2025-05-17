@@ -102,15 +102,22 @@ namespace SecondProject_Auto.Forms
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Image files (*.jpg, *.jpeg, *.png)|*.jpg;*.jpeg;*.png|All files (*.*)|*.*";
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            try
             {
-                photoFilePath = @"..\..\Resources\" + openFileDialog.SafeFileName;
-                File.Copy(openFileDialog.FileName, photoFilePath);
+                OpenFileDialog openFileDialog = new OpenFileDialog();
+                openFileDialog.Filter = "Image files (*.jpg, *.jpeg, *.png, *.webp)|*.jpg;*.jpeg;*.png;*.webp|All files (*.*)|*.*";
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    photoFilePath = @"..\..\Resources\" + openFileDialog.SafeFileName;
+                    File.Copy(openFileDialog.FileName, photoFilePath);
 
-                pictureBox1.Image = Image.FromFile(photoFilePath);
-                pictureBox1.Update();
+                    pictureBox1.Image = Image.FromFile(photoFilePath);
+                    pictureBox1.Update();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка: {ex.Message}", "Ошибка сохранения", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

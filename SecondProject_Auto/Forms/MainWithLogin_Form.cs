@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Windows.Forms;
@@ -7,6 +8,10 @@ namespace SecondProject_Auto.Forms
 {
     public partial class MainWithLogin_Form : Form
     {
+        private List<CarControl> allCarControls = new List<CarControl>();
+        private List<Auto> allCars = new List<Auto>();
+        private Auto selectedCar;
+        private bool isFiltering = false;
         public MainWithLogin_Form()
         {
             InitializeComponent();
@@ -18,17 +23,126 @@ namespace SecondProject_Auto.Forms
             }
             using (var context = new AutoContext())
             {
-                var cars = context.Autos.ToList();
-                foreach (var car in cars)
+                allCars = context.Autos.ToList();
+                foreach (var car in allCars)
                 {
                     CarControl carControl = new CarControl(car);
                     carControl.Name = car.Name;
                     carControl.Id = car.Id;
                     carControl.Price = car.Price;
                     carControl.ImageUrl = car.PhotoFilePath;
+                    carControl.buttonOff();
                     flowLayoutPanel1.Controls.Add(carControl);
                 }
+
+                foreach (var car in allCars)
+                {
+                    CarControl carControl = new CarControl(car);
+                    carControl.CarSelected += OnCarSelected;
+                    carControl.Name = car.Name;
+                    carControl.Id = car.Id;
+                    carControl.Price = car.Price;
+                    carControl.ImageUrl = car.PhotoFilePath;
+                    flowLayoutPanel2.Controls.Add(carControl);
+                    allCarControls.Add(carControl);
+                }
             }
+        }
+        private void OnCarSelected(object sender, CarEventArgs e)
+        {
+            if (isFiltering) return;
+
+            var carControl = (CarControl)sender;
+            var candidateCar = e.SelectedCar;
+
+            if (candidateCar == null) return;
+
+            isFiltering = true;
+
+            if (selectedCar == null || selectedCar.Id != candidateCar.Id)
+            {
+                selectedCar = candidateCar;
+                FilterSimilarCars();
+            }
+            else
+            {
+                selectedCar = null;
+                ShowAllCars();
+            }
+
+            isFiltering = false;
+        }
+        private void FilterSimilarCars()
+        {
+            if (selectedCar == null) return;
+
+            var similarCars = GetSimilarCars(selectedCar, allCars);
+
+            if (!similarCars.Any(c => c.Id == selectedCar.Id))
+            {
+                similarCars.Insert(0, selectedCar); 
+            }
+
+            foreach (var control in allCarControls)
+            {
+                control.Visible = similarCars.Any(c => c.Id == control.Car.Id);
+            }
+
+            flowLayoutPanel2.ResumeLayout();
+            flowLayoutPanel2.Invalidate();
+        }
+        private void ShowAllCars()
+        {
+            foreach (var control in allCarControls)
+            {
+                control.Visible = true;
+            }
+        }
+        public static int CalculateMatchScore(Auto target, Auto candidate)
+        {
+            int score = 0;
+
+            if (!string.IsNullOrWhiteSpace(candidate.AutoType) &&
+                !string.IsNullOrWhiteSpace(target.AutoType) &&
+                candidate.AutoType.Trim().ToLower() == target.AutoType.Trim().ToLower())
+            {
+                score += 3;
+            }
+
+            if (candidate.QualityType == target.QualityType) score += 2;
+            if (candidate.FuelType == target.FuelType) score += 2;
+
+            if (Math.Abs(candidate.Price - target.Price) <= target.Price * 0.15m)
+                score += 2;
+
+            if (Math.Abs(candidate.HorsePower - target.HorsePower) <= 20)
+                score += 1;
+
+            if (!string.IsNullOrWhiteSpace(candidate.Mfr) &&
+                candidate.Mfr.Trim().ToLower() == target.Mfr.Trim().ToLower())
+            {
+                score += 1;
+            }
+
+            return score;
+        }
+
+        public List<Auto> GetSimilarCars(Auto targetCar, List<Auto> allCars, int topN = 3)
+        {
+            var scoredCars = allCars
+                .Select(car => new
+                {
+                    Auto = car,
+                    Score = CalculateMatchScore(targetCar, car)
+                })
+                .OrderByDescending(x => x.Score)
+                .ToList();
+
+            return scoredCars
+                .Where(x => x.Score > 0)
+                .Take(topN)
+                .Select(x => x.Auto)
+                .ToList();
         }
 
         private void profile_btn_Click(object sender, EventArgs e)
@@ -73,8 +187,10 @@ namespace SecondProject_Auto.Forms
         {
             using(var form = new AddCar_Form())
             {
-                form.ShowDialog();
-                Update();
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    LoadCars();
+                }
             }
         }
 
@@ -118,6 +234,37 @@ namespace SecondProject_Auto.Forms
 
             favorite_btn.ForeColor = System.Drawing.Color.Black;
             favorite_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular);
+        }
+        private void LoadCars()
+        {
+            using (var context = new AutoContext())
+            {
+                allCars = context.Autos.ToList();
+
+                foreach (var car in allCars)
+                {
+                    CarControl carControl = new CarControl(car);
+                    carControl.Name = car.Name;
+                    carControl.Id = car.Id;
+                    carControl.Price = car.Price;
+                    carControl.ImageUrl = car.PhotoFilePath;
+                    carControl.buttonOff();
+                    flowLayoutPanel1.Controls.Add(carControl);
+                    allCarControls.Add(carControl);
+                }
+
+                foreach (var car in allCars)
+                {
+                    CarControl carControl = new CarControl(car);
+                    carControl.CarSelected += OnCarSelected;
+                    carControl.Name = car.Name;
+                    carControl.Id = car.Id;
+                    carControl.Price = car.Price;
+                    carControl.ImageUrl = car.PhotoFilePath;
+                    Controls.Add(carControl);
+                    allCarControls.Add(carControl);
+                }
+            }
         }
     }
 }

@@ -65,5 +65,57 @@ namespace SecondProject_Auto
             UserDeleted?.Invoke(this, EventArgs.Empty);
             Close();
         }
+
+        private void loginName_txtb_Enter(object sender, EventArgs e)
+        {
+            name_lbl.Visible = false;
+        }
+
+        private void loginName_txtb_Leave(object sender, EventArgs e)
+        {
+            if (loginName_txtb.Text == "")
+            {
+                name_lbl.Visible = true;
+            }
+        }
+
+        private void loginEmail_txtb_Enter(object sender, EventArgs e)
+        {
+            email_lbl.Visible = false;
+        }
+
+        private void loginEmail_txtb_Leave(object sender, EventArgs e)
+        {
+            if (loginEmail_txtb.Text == "")
+            {
+                email_lbl.Visible = true;
+            }
+        }
+
+        private void loginPassword_txtb_Enter(object sender, EventArgs e)
+        {
+            password_lbl.Visible = false;
+        }
+
+        private void loginPassword_txtb_Leave(object sender, EventArgs e)
+        {
+            if (loginPassword_txtb.Text == "")
+            {
+                password_lbl.Visible = true;
+            }
+        }
+
+        private void loginSecPassword_txtb_Enter(object sender, EventArgs e)
+        {
+            passwordSec_lbl.Visible = false;
+        }
+
+        private void loginSecPassword_txtb_Leave(object sender, EventArgs e)
+        {
+            if (loginSecPassword_txtb.Text == "")
+            {
+                passwordSec_lbl.Visible = true;
+            }
+        }
     }
 }

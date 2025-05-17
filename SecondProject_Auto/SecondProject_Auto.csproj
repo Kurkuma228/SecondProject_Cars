@@ -77,6 +77,12 @@
     <Compile Include="Classes\CarControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Classes\CircleButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\CircleButton.Designer.cs">
+      <DependentUpon>CircleButton.cs</DependentUpon>
+    </Compile>
     <Compile Include="Contexts\AutoContext.cs" />
     <Compile Include="Enums\FuelType.cs" />
     <Compile Include="Forms\AddCar_Form.cs">
@@ -90,6 +96,12 @@
     </Compile>
     <Compile Include="Forms\CarDescription_Form.Designer.cs">
       <DependentUpon>CarDescription_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EditDescriptionCar_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditDescriptionCar_Form.Designer.cs">
+      <DependentUpon>EditDescriptionCar_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Login_Form.cs">
       <SubType>Form</SubType>
@@ -127,11 +139,17 @@
     <EmbeddedResource Include="Classes\CarControl.resx">
       <DependentUpon>CarControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Classes\CircleButton.resx">
+      <DependentUpon>CircleButton.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddCar_Form.resx">
       <DependentUpon>AddCar_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CarDescription_Form.resx">
       <DependentUpon>CarDescription_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditDescriptionCar_Form.resx">
+      <DependentUpon>EditDescriptionCar_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Login_Form.resx">
       <DependentUpon>Login_Form.cs</DependentUpon>

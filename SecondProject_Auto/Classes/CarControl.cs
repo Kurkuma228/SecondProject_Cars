@@ -10,7 +10,13 @@ namespace SecondProject_Auto.Forms
         private Label price_lbl;
         private Button description_btn;
         private PictureBox car_pbx;
-        private Auto car;
+        private CustomControls.CircleButton circleButton1;
+
+        public event EventHandler CarEdited;
+
+        public event EventHandler<CarEventArgs> CarSelected;
+
+        public Auto Car { get; private set; }
 
         public int Id { get; set; }
         public string Name
@@ -53,7 +59,12 @@ namespace SecondProject_Auto.Forms
         public CarControl(Auto car)
         {
             InitializeComponent();
-            this.car = car;
+            Car = car;
+        }
+
+        private void OnSelectButtonClick(object sender, EventArgs e)
+        {
+            CarSelected?.Invoke(this, new CarEventArgs(Car));
         }
 
         private void InitializeComponent()
@@ -61,12 +72,14 @@ namespace SecondProject_Auto.Forms
             this.name_lbl = new System.Windows.Forms.Label();
             this.price_lbl = new System.Windows.Forms.Label();
             this.description_btn = new System.Windows.Forms.Button();
+            this.circleButton1 = new CustomControls.CircleButton();
             this.car_pbx = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.car_pbx)).BeginInit();
             this.SuspendLayout();
             // 
             // name_lbl
             // 
+            this.name_lbl.BackColor = System.Drawing.Color.White;
             this.name_lbl.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.name_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.name_lbl.ForeColor = System.Drawing.Color.Black;
@@ -105,6 +118,19 @@ namespace SecondProject_Auto.Forms
             this.description_btn.UseVisualStyleBackColor = false;
             this.description_btn.Click += new System.EventHandler(this.description_btn_Click);
             // 
+            // circleButton1
+            // 
+            this.circleButton1.BackColor = System.Drawing.SystemColors.Control;
+            this.circleButton1.FlatAppearance.BorderSize = 0;
+            this.circleButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.circleButton1.Location = new System.Drawing.Point(226, 183);
+            this.circleButton1.Name = "circleButton1";
+            this.circleButton1.Size = new System.Drawing.Size(30, 30);
+            this.circleButton1.TabIndex = 4;
+            this.circleButton1.Text = "circleButton1";
+            this.circleButton1.UseVisualStyleBackColor = false;
+            this.circleButton1.Click += new System.EventHandler(OnSelectButtonClick);
+            // 
             // car_pbx
             // 
             this.car_pbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -118,11 +144,12 @@ namespace SecondProject_Auto.Forms
             // 
             // CarControl
             // 
+            this.Controls.Add(this.circleButton1);
             this.Controls.Add(this.name_lbl);
             this.Controls.Add(this.price_lbl);
             this.Controls.Add(this.description_btn);
             this.Controls.Add(this.car_pbx);
-            this.Margin = new System.Windows.Forms.Padding(5);
+            this.Margin = new System.Windows.Forms.Padding(23);
             this.Name = "CarControl";
             this.Padding = new System.Windows.Forms.Padding(5);
             this.Size = new System.Drawing.Size(264, 254);
@@ -133,10 +160,25 @@ namespace SecondProject_Auto.Forms
 
         private void description_btn_Click(object sender, EventArgs e)
         {
-            using(var form = new CarDescription_Form(car))
+            using(var form = new CarDescription_Form(Car))
             {
                 form.ShowDialog();
+                Car = form.car;
             }
+        }
+        public void buttonOff()
+        {
+            circleButton1.Visible = false;
+        }
+    }
+
+    public class CarEventArgs : EventArgs
+    {
+        public Auto SelectedCar { get; private set; }
+
+        public CarEventArgs(Auto selectedCar)
+        {
+            SelectedCar = selectedCar;
         }
     }
 }
