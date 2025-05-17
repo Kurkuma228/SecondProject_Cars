@@ -259,7 +259,7 @@
         public System.Windows.Forms.TextBox loginName_txtb;
         private System.Windows.Forms.Label name_lbl;
         public System.Windows.Forms.TextBox loginEmail_txtb;
-        private System.Windows.Forms.Label email_lbl;
+        public System.Windows.Forms.Label email_lbl;
         private System.Windows.Forms.TextBox loginPassword_txtb;
         private System.Windows.Forms.Label password_lbl;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -270,6 +270,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Button delete_btn;
-        private System.Windows.Forms.CheckBox checkBox1;
+        public System.Windows.Forms.CheckBox checkBox1;
     }
 }

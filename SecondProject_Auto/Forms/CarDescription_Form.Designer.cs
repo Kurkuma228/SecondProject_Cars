@@ -325,9 +325,9 @@
         private System.Windows.Forms.Label milageEdit_lbl;
         private System.Windows.Forms.Label colorEdit_lbl;
         private System.Windows.Forms.Label color_lbl;
-        private System.Windows.Forms.Label seatingCapacityEdit_lbl;
-        private System.Windows.Forms.Label seatingCapacity_lbl;
-        private System.Windows.Forms.Label info_lbl;
+        public System.Windows.Forms.Label seatingCapacityEdit_lbl;
+        public System.Windows.Forms.Label seatingCapacity_lbl;
+        public System.Windows.Forms.Label info_lbl;
         private System.Windows.Forms.Label typeCarEdit_lbl;
         private System.Windows.Forms.Label engineEdit_lbl;
         private System.Windows.Forms.Label horsePowerEdit_lbl;

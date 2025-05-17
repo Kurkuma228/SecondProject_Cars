@@ -52,7 +52,7 @@ namespace SecondProject_Auto
             }
         }
 
-        private void save_btn_Click(object sender, EventArgs e)
+        public void save_btn_Click(object sender, EventArgs e)
         {
             string name = loginName_txtb.Text.Trim();
             string email = loginEmail_txtb.Text.Trim();
@@ -158,7 +158,7 @@ namespace SecondProject_Auto
             loginSecPassword_txtb.UseSystemPasswordChar = !showPassword;
         }
 
-        private void delete_btn_Click(object sender, EventArgs e)
+        public void delete_btn_Click(object sender, EventArgs e)
         {
             var result = MessageBox.Show("Вы уверены, что хотите удалить аккаунт?", "Подтверждение удаления", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
