@@ -40,7 +40,7 @@ namespace SecondProject_Auto.Forms
             form.UserDeleted += OnUserDeleted;
         }
 
-        private void exit_btn_Click(object sender, EventArgs e)
+        public void exit_btn_Click(object sender, EventArgs e)
         {
             Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
             config.AppSettings.Settings["IsLoggedIn"].Value = "false";

@@ -11,7 +11,7 @@ namespace SecondProject_Auto.Forms
         {
             InitializeComponent();
         }
-        private void register_btn_Click(object sender, EventArgs e)
+        public void register_btn_Click(object sender, EventArgs e)
         {
             try
             {
@@ -82,7 +82,7 @@ namespace SecondProject_Auto.Forms
             }
         }
 
-        private void loginName_txtb_Enter(object sender, EventArgs e)
+        public void loginName_txtb_Enter(object sender, EventArgs e)
         {
             name_lbl.Visible = false;
         }
@@ -106,12 +106,12 @@ namespace SecondProject_Auto.Forms
                 password_lbl.Visible = true;
             }
         }
-        private void loginEmail_txtb_Enter(object sender, EventArgs e)
+        public void loginEmail_txtb_Enter(object sender, EventArgs e)
         {
             email_lbl.Visible = false;
         }
 
-        private void loginEmail_txtb_Leave(object sender, EventArgs e)
+        public void loginEmail_txtb_Leave(object sender, EventArgs e)
         {
             if (loginEmail_txtb.Text == "")
             {

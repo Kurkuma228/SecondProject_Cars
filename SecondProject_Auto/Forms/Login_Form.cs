@@ -42,7 +42,7 @@ namespace SecondProject_Auto.Forms
                 MessageBox.Show("Вы ввели неверный логин или пароль");
             }
         }
-        private bool AuthenticateUser(string input, string password)
+        public bool AuthenticateUser(string input, string password)
         {
             string hashedPassword = HashPassword(password);
 
@@ -90,7 +90,7 @@ namespace SecondProject_Auto.Forms
                 }
             }
         }
-        private string HashPassword(string password)
+        public string HashPassword(string password)
         {
             using (SHA256 sha256 = SHA256.Create())
             {
@@ -111,12 +111,12 @@ namespace SecondProject_Auto.Forms
             
         }
 
-        private void loginNameEmail_txtb_Enter(object sender, EventArgs e)
+        public void loginNameEmail_txtb_Enter(object sender, EventArgs e)
         {
             loginAndEmail_lbl.Visible = false;
         }
 
-        private void loginNameEmail_txtb_Leave(object sender, EventArgs e)
+        public void loginNameEmail_txtb_Leave(object sender, EventArgs e)
         {
             if (loginNameEmail_txtb.Text == "")
             {
@@ -124,12 +124,12 @@ namespace SecondProject_Auto.Forms
             }
         }
 
-        private void loginPassword_txtb_Enter(object sender, EventArgs e)
+        public void loginPassword_txtb_Enter(object sender, EventArgs e)
         {
             passwrod_lbl.Visible = false;
         }
 
-        private void loginPassword_txtb_Leave(object sender, EventArgs e)
+        public void loginPassword_txtb_Leave(object sender, EventArgs e)
         {
             if (loginPassword_txtb.Text == "")
             {

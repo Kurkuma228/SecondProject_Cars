@@ -2,10 +2,11 @@
 
 namespace SecondProject_Auto
 {
-    class UserContext : DbContext
+    public class UserContext : DbContext
     {
         public UserContext() : base("SecondDBConnection") { }
         public DbSet<User> Users { get; set; }
+
     }
     public class User
     {
