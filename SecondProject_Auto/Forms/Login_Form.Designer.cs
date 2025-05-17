@@ -201,14 +201,14 @@
 
         public System.Windows.Forms.TextBox loginNameEmail_txtb;
         private System.Windows.Forms.Label login_lbl;
-        private System.Windows.Forms.TextBox loginPassword_txtb;
+        public System.Windows.Forms.TextBox loginPassword_txtb;
         private System.Windows.Forms.Button login_btn;
         private System.Windows.Forms.Button register_btn;
         private System.Windows.Forms.PictureBox white_pbox;
         private System.Windows.Forms.PictureBox back_pbox;
-        private System.Windows.Forms.Label loginAndEmail_lbl;
+        public System.Windows.Forms.Label loginAndEmail_lbl;
         private System.Windows.Forms.Label passwrod_lbl;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.CheckBox checkBox1;
+        public System.Windows.Forms.CheckBox checkBox1;
     }
 }

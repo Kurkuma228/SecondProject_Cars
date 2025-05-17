@@ -46,7 +46,7 @@ namespace SecondProject_Auto.Forms
             }
         }
 
-        private void photo_btn_Click(object sender, EventArgs e)
+        public void photo_btn_Click(object sender, EventArgs e)
         {
             try
             { 

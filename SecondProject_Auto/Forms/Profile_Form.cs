@@ -20,7 +20,7 @@ namespace SecondProject_Auto
             }
         }
 
-        private void save_btn_Click(object sender, EventArgs e)
+        public void save_btn_Click(object sender, EventArgs e)
         {
             using (var context = new UserContext())
             {
@@ -54,7 +54,7 @@ namespace SecondProject_Auto
             }
         }
 
-        private void delete_btn_Click(object sender, EventArgs e)
+        public void delete_btn_Click(object sender, EventArgs e)
         {
             using (var context = new UserContext())
             {
