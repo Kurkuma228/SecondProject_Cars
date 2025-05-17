@@ -109,11 +109,20 @@ namespace SecureProject_Auto.Tests.ComprehensiveTests
         [Fact]
         public void CarControl_Initialize_ShouldCreateAllControlsExceptImage()
         {
-            var carControl = new CarControl();
+            var testAuto = new Auto
+            {
+                Id = 1,
+                Name = "TestCar",
+                Price = 25000,
+                Color = "Red",
+                PhotoFilePath = "test.jpg"
+            };
 
-            var nameLabel = carControl.Controls["nameLabel"] as Label;
-            var priceLabel = carControl.Controls["priceLabel"] as Label;
-            var descriptionButton = carControl.Controls["descriptionButton"] as Button;
+            var carControl = new CarControl(testAuto);
+
+            var nameLabel = carControl.Controls.OfType<Label>().FirstOrDefault(c => c.Name == "name_lbl");
+            var priceLabel = carControl.Controls.OfType<Label>().FirstOrDefault(c => c.Name == "price_lbl");
+            var descriptionButton = carControl.Controls.OfType<Button>().FirstOrDefault(c => c.Name == "description_btn");
 
             Assert.NotNull(nameLabel);
             Assert.NotNull(priceLabel);
@@ -124,22 +133,31 @@ namespace SecureProject_Auto.Tests.ComprehensiveTests
         [Fact]
         public void CarControl_SetPropertiesDirectly_ShouldSetPropertiesCorrectly()
         {
-            var carControl = new CarControl();
+            var testAuto = new Auto
+            {
+                Id = 1,
+                Name = "TestCar",
+                Price = 25000,
+                Color = "Red",
+                PhotoFilePath = "test.jpg"
+            };
 
-            carControl.Id = 1;
-            carControl.Name = "TestCar";
-            carControl.Price = 25000;
-            carControl.Description = "Test Description";
+            var carControl = new CarControl(testAuto);
 
-            var nameLabel = carControl.Controls["nameLabel"] as Label;
+            carControl.Id = 2;
+            carControl.Name = "UpdatedCarName";
+            carControl.Price = 30000;
+            carControl.Description = "Updated Description";
 
-            Assert.Equal(1, carControl.Id);
-            Assert.Equal("TestCar", carControl.Name);
-            Assert.Equal(25000, carControl.Price);
-            Assert.Equal("Test Description", carControl.Description);
+            var nameLabel = carControl.Controls.OfType<Label>().FirstOrDefault(c => c.Name == "name_lbl");
+
+            Assert.Equal(2, carControl.Id);
+            Assert.Equal("UpdatedCarName", carControl.Name);
+            Assert.Equal(30000, carControl.Price);
+            Assert.Equal("Updated Description", carControl.Description);
 
             Assert.NotNull(nameLabel);
-            Assert.Equal("TestCar", nameLabel.Text);
+            Assert.Equal("UpdatedCarName", nameLabel.Text);
         }
 
         // Тест 6
