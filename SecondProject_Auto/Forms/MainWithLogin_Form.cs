@@ -18,7 +18,7 @@ namespace SecondProject_Auto.Forms
             InitializeComponent();
 
             Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-            if (config.AppSettings.Settings["UserId"].Value == "2")
+            if (config.AppSettings.Settings["UserId"].Value == "3")
             {
                 addCar_btn.Visible = true;
             }

@@ -14,7 +14,7 @@ namespace SecondProject_Auto.Forms
 
             edit_btn.Visible = false;
             Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-            if (config.AppSettings.Settings["UserId"].Value == "2")
+            if (config.AppSettings.Settings["UserId"].Value == "3")
             {
                 edit_btn.Visible = true;
             }
