@@ -14,14 +14,14 @@ namespace SecondProject_Auto.Forms
             Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
             if (config.AppSettings.Settings["UserId"].Value == "2")
             {
-                button1.Visible = true;
+                addCar_btn.Visible = true;
             }
             using (var context = new AutoContext())
             {
                 var cars = context.Autos.ToList();
                 foreach (var car in cars)
                 {
-                    CarControl carControl = new CarControl();
+                    CarControl carControl = new CarControl(car);
                     carControl.Name = car.Name;
                     carControl.Id = car.Id;
                     carControl.Price = car.Price;
@@ -29,7 +29,6 @@ namespace SecondProject_Auto.Forms
                     flowLayoutPanel1.Controls.Add(carControl);
                 }
             }
-
         }
 
         private void profile_btn_Click(object sender, EventArgs e)
@@ -38,6 +37,7 @@ namespace SecondProject_Auto.Forms
             Visible = false;
             form.ShowDialog();
             form.UserDeleted += OnUserDeleted;
+            Visible = true;
         }
 
         private void exit_btn_Click(object sender, EventArgs e)
@@ -74,22 +74,50 @@ namespace SecondProject_Auto.Forms
             using(var form = new AddCar_Form())
             {
                 form.ShowDialog();
+                Update();
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             tabControl1.SelectedIndex = 0;
+
+            form_btn.ForeColor = System.Drawing.Color.FromArgb(100, 106, 232);
+            form_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline);
+
+            favorite_btn.ForeColor = System.Drawing.Color.FromArgb(100, 106, 232);
+            favorite_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline);
+
+            main_btn.ForeColor = System.Drawing.Color.Black;
+            main_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             tabControl1.SelectedIndex = 1;
+
+            main_btn.ForeColor = System.Drawing.Color.FromArgb(100, 106, 232);
+            main_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline);
+
+            favorite_btn.ForeColor = System.Drawing.Color.FromArgb(100, 106, 232);
+            favorite_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline);
+
+            form_btn.ForeColor = System.Drawing.Color.Black;
+            form_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular);
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             tabControl1.SelectedIndex = 2;
+
+            form_btn.ForeColor = System.Drawing.Color.FromArgb(100, 106, 232);
+            form_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline);
+
+            main_btn.ForeColor = System.Drawing.Color.FromArgb(100, 106, 232);
+            main_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline);
+
+            favorite_btn.ForeColor = System.Drawing.Color.Black;
+            favorite_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular);
         }
     }
 }

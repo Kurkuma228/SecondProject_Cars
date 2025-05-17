@@ -13,11 +13,11 @@ namespace SecondProject_Auto.Forms
         DateTime dateCreate { get; set; }
         decimal price { get; set; }
         string color { get; set; }
-        uint mileage { get; set; }
+        float mileage { get; set; }
         QualityType quality { get; set; }
         FuelType fuelType { get; set; }
         string engine { get; set; }
-        uint horsePower { get; set; }
+        int horsePower { get; set; }
         byte seatingCapacity { get; set; }
         string mfr { get; set; }
         string photoFilePath { get; set; }
@@ -36,8 +36,8 @@ namespace SecondProject_Auto.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //try
-            //{
+            try
+            {
                 name = name_txt.Text;
 
                 autoType = autoType_txt.Text;
@@ -46,7 +46,7 @@ namespace SecondProject_Auto.Forms
 
                 color = color_txt.Text;
 
-                mileage = uint.Parse(mileage_txt.Text);
+                mileage = float.Parse(mileage_txt.Text);
 
                 fuelType = (FuelType)Enum.Parse(typeof(FuelType), fuelType_cmb.Text);
 
@@ -62,7 +62,7 @@ namespace SecondProject_Auto.Forms
 
                 engine = engine_txt.Text;
 
-                horsePower = uint.Parse(horsepower_txt.Text);
+                horsePower = int.Parse(horsepower_txt.Text);
 
                 seatingCapacity = byte.Parse(seat_txt.Text);
 
@@ -90,14 +90,15 @@ namespace SecondProject_Auto.Forms
 
                     context.Autos.Add(car);
                     context.SaveChanges();
+                    
                 }
                 MessageBox.Show("Машина успешно добавлена!");
-            //}
-            //    catch (Exception ex)
-            //    {
-            //        MessageBox.Show($"Ошибка при добавлении автомобиля:\n{ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    }
         }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ошибка при добавлении автомобиля:\n{ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+}
 
         private void button1_Click_1(object sender, EventArgs e)
         {
@@ -105,10 +106,10 @@ namespace SecondProject_Auto.Forms
             openFileDialog.Filter = "Image files (*.jpg, *.jpeg, *.png)|*.jpg;*.jpeg;*.png|All files (*.*)|*.*";
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                photoFilePath = $@"..\..\Resources\{openFileDialog.SafeFileName}";
+                photoFilePath = @"..\..\Resources\" + openFileDialog.SafeFileName;
                 File.Copy(openFileDialog.FileName, photoFilePath);
 
-                pictureBox1.Image = Image.FromFile(openFileDialog.FileName);
+                pictureBox1.Image = Image.FromFile(photoFilePath);
                 pictureBox1.Update();
             }
         }
