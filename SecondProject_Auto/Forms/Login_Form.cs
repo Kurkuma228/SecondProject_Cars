@@ -5,12 +5,12 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Forms;
 
-
 namespace SecondProject_Auto.Forms
 {
     public partial class Login_Form : Form
     {
         static public bool IsLoggedIn { get; private set; } = false;
+
         public Login_Form()
         {
             InitializeComponent();
@@ -18,8 +18,32 @@ namespace SecondProject_Auto.Forms
 
         private void login_btn_Click(object sender, EventArgs e)
         {
-            string nameOrEmail = loginNameEmail_txtb.Text;
-            string password = loginPassword_txtb.Text;
+            string nameOrEmail = loginNameEmail_txtb.Text.Trim();
+            string password = loginPassword_txtb.Text.Trim();
+
+            if (string.IsNullOrEmpty(nameOrEmail))
+            {
+                MessageBox.Show("Пожалуйста, введите имя или email.");
+                return;
+            }
+
+            if (nameOrEmail.Length < 3)
+            {
+                MessageBox.Show("Имя или email должно быть не короче 3 символов.");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(password))
+            {
+                MessageBox.Show("Пожалуйста, введите пароль.");
+                return;
+            }
+
+            if (password.Length < 6)
+            {
+                MessageBox.Show("Пароль должен быть не короче 6 символов.");
+                return;
+            }
 
             if (AuthenticateUser(nameOrEmail, password))
             {
@@ -39,9 +63,10 @@ namespace SecondProject_Auto.Forms
             }
             else
             {
-                MessageBox.Show("Вы ввели неверный логин или пароль");
+                MessageBox.Show("Вы ввели неверное имя/почту или пароль");
             }
         }
+
         public bool AuthenticateUser(string input, string password)
         {
             string hashedPassword = HashPassword(password);
@@ -54,15 +79,23 @@ namespace SecondProject_Auto.Forms
                 command.Parameters.AddWithValue("@Input", input);
                 command.Parameters.AddWithValue("@Password", hashedPassword);
 
-                connection.Open();
-                int count = (int)command.ExecuteScalar();
-
-                return count > 0; 
+                try
+                {
+                    connection.Open();
+                    int count = (int)command.ExecuteScalar();
+                    return count > 0;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ошибка при авторизации: {ex.Message}");
+                    return false;
+                }
             }
         }
+
         private int GetUserIdByNameOrEmail(string input)
         {
-            string query = "SELECT Id FROM Users WHERE (Name = @Input OR Email = @Input) ";
+            string query = "SELECT Id FROM Users WHERE (Name = @Input OR Email = @Input)";
 
             using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["SecondDBConnection"].ConnectionString))
             {
@@ -72,11 +105,11 @@ namespace SecondProject_Auto.Forms
                 try
                 {
                     connection.Open();
-                    object result = command.ExecuteScalar(); 
+                    object result = command.ExecuteScalar();
 
                     if (result != null && int.TryParse(result.ToString(), out int userId))
                     {
-                        return userId; 
+                        return userId;
                     }
                     else
                     {
@@ -86,10 +119,11 @@ namespace SecondProject_Auto.Forms
                 catch (Exception ex)
                 {
                     MessageBox.Show($"Ошибка при выполнении запроса: {ex.Message}");
-                    return -1; 
+                    return -1;
                 }
             }
         }
+
         public string HashPassword(string password)
         {
             using (SHA256 sha256 = SHA256.Create())
@@ -107,8 +141,7 @@ namespace SecondProject_Auto.Forms
             {
                 registration_Form.ShowDialog();
             }
-             Visible = true;
-            
+            Visible = true;
         }
 
         public void loginNameEmail_txtb_Enter(object sender, EventArgs e)
