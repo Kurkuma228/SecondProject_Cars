@@ -70,6 +70,7 @@
             this.name_lbl.Size = new System.Drawing.Size(35, 17);
             this.name_lbl.TabIndex = 3;
             this.name_lbl.Text = "Имя";
+            this.name_lbl.Visible = false;
             // 
             // loginEmail_txtb
             // 
@@ -93,6 +94,7 @@
             this.email_lbl.Size = new System.Drawing.Size(49, 17);
             this.email_lbl.TabIndex = 5;
             this.email_lbl.Text = "Почта";
+            this.email_lbl.Visible = false;
             // 
             // loginPassword_txtb
             // 

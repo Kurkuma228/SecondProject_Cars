@@ -116,6 +116,6 @@ namespace SecondProject_Auto
             {
                 passwordSec_lbl.Visible = true;
             }
-        }
+        } 3
     }
 }
